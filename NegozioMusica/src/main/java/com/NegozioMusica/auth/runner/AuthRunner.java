@@ -87,7 +87,7 @@ public class AuthRunner implements ApplicationRunner {
 		
 		RegisterDto userAdmin = new RegisterDto();
 		userAdmin.setName("Admino Stretor");
-		userAdmin.setUsername("admin");
+		userAdmin.setSurname("admin");
 		userAdmin.setEmail("admin@example.com");
 		userAdmin.setPassword(passwordEncoder.encode("admin"));
 		userAdmin.setRoles(roleAdmin);
@@ -95,7 +95,7 @@ public class AuthRunner implements ApplicationRunner {
 		
 		RegisterDto simpleUser = new RegisterDto();
 		simpleUser.setName("Mario Rossi");
-		simpleUser.setUsername("mariorossi");
+		simpleUser.setSurname("mariorossi");
 		simpleUser.setEmail("m.rossi@example.com");
 		simpleUser.setPassword(passwordEncoder.encode("12345"));
 		simpleUser.setRoles(roleUser);
@@ -103,7 +103,7 @@ public class AuthRunner implements ApplicationRunner {
 		
 		RegisterDto userModerator = new RegisterDto();
 		userModerator.setName("Giuseppe Verdi");
-		userModerator.setUsername("giuver");
+		userModerator.setSurname("giuver");
 		userModerator.setEmail("g.verdi@example.com");
 		userModerator.setPassword(passwordEncoder.encode("qwerty"));
 		userModerator.setRoles(roleModerator);

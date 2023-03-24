@@ -17,7 +17,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class RegisterDto {
     private String name;
-    private String username;
+    private String surname;
     private String email;
     private String password;
     private Set<String> roles;

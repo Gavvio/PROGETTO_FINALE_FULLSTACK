@@ -17,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = "username"),
+@Table(name = "users", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "email") })
 public class User {
 
@@ -26,7 +26,7 @@ public class User {
     private Long id;
     private String name;
     @Column(nullable = false, unique = true)
-    private String username;
+    private String surname;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
