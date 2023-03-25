@@ -1,0 +1,26 @@
+#logo_pagina{
+  width: 200px;
+  transition: transform 0.2s;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+
+.nav-pills{
+  a{
+    color: white;
+  }
+  li{
+    a.active{
+      background-color: #1c1c1c!important;
+    }
+    .hover_viola:hover{
+      background-color: #6009b0 !important;
+    }
+  }
+}
+nav{
+  background-color: black !important;
+  color: white !important;
+}
+
