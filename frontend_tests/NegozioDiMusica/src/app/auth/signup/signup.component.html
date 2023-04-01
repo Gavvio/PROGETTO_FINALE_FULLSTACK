@@ -3,11 +3,11 @@
     <h2 class="text-center">signup</h2>
     <div class="col-md-6">
       <label for="inputName" class="form-label"></label>
-      <input type="text" class="form-control" placeholder="nome" name="nome" ngModel>
+      <input type="text" class="form-control" placeholder="nome" name="name" ngModel>
     </div>
     <div class="col-md-6">
       <label for="inputSurname" class="form-label"></label>
-      <input type="text" class="form-control" placeholder="cognome" name="cognome" ngModel>
+      <input type="text" class="form-control" placeholder="cognome" name="surname" ngModel>
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label"></label>
@@ -18,8 +18,13 @@
       <input type="password" class="form-control" placeholder="password" name="password" ngModel>
     </div>
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary" id="button_signup">Sign up</button>
+    <div class="d-flex flex-column">
+      <div class=" d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary" id="button_signup">Sign up</button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="mx-auto" routerLink="../../auth/login">login</a>
+      </div>
     </div>
   </form>
 </div>

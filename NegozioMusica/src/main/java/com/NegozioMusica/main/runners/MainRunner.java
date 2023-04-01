@@ -1,5 +1,9 @@
 package com.NegozioMusica.main.runners;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -7,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import com.NegozioMusica.main.entities.ChitarraElettrica;
 import com.NegozioMusica.main.services.ChitarraElettricaService;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 
 @Component
 public class MainRunner implements ApplicationRunner {
@@ -36,7 +42,18 @@ public class MainRunner implements ApplicationRunner {
 		System.out.println("main runner on");
 		
 		//creaChitarraElettrica("bianco vintage lucido",".010-.046","1 volume, 1 tono","mogano","bianchi","42mm","628mm","mogano incollatura singola","humbucker attivi EMG81 (ponte) e EMG60 (manico)",22,"ebano",399,"Harley Benton EX-84 Modern EMG VW");
-
+		Map config = new HashMap<>();
+		config.put("cloud_name", "dom3joacd");
+		config.put("api_key", "417758232477746");
+		config.put("api_secret", "bqa5mtXdJDZsvFLalHAQwaor-xY");
+		Cloudinary cloudinary = new Cloudinary(config);
+		try {
+			  cloudinary.uploader().upload("C:\\Users\\steve\\OneDrive\\Desktop\\PROGETTO_FINALE_FULLSTACK\\immagini progetto\\immagini categorie", ObjectUtils.asMap("public_id", "categoria_chitarre"));
+			} catch (IOException exception) {
+			  System.out.println(exception.getMessage());
+			}
+		
+		
 	}
 
 }

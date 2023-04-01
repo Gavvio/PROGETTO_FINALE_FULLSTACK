@@ -8,6 +8,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PrimaSceltaComponent } from './components/prima-scelta/prima-scelta.component';
+import { SecondaSceltaComponent } from './components/seconda-scelta/seconda-scelta.component';
+import { ArticlesComponent } from './components/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,16 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PrimaSceltaComponent,
+    SecondaSceltaComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

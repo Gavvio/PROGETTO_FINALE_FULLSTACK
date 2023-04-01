@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+
+  <div class="container mt-3 mx-lg-5">
+
+
+
+    <div *ngIf="path=='chitarre_elettriche'">
+
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Chitarre Elettriche</li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/chitarre_elettriche/modelli_stratocaster">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/chitarre_elettriche/modelli_stratocaster.jpg"
+            class="card-img-start" alt="modelli stratocaster">
+          <div class="card-title pe-3 fw-bold fs-5">Modelli Stratocaster</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/chitarre_elettriche/modelli_telecaster">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/chitarre_elettriche/modelli_telecaster.jpg"
+            class="card-img-start" alt="modelli telecaster">
+          <div class="card-title pe-3 fw-bold fs-5">Modelli Telecaster</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/chitarre_elettriche/modelli_single_cut">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/chitarre_elettriche/modelli_single_cut.jpg"
+            class="card-img-start" alt="modelli single cut">
+          <div class="card-title pe-3 fw-bold fs-5">Modelli Single Cut</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/chitarre_elettriche/modelli_double_cut">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/chitarre_elettriche/modelli_double_cut.jpg"
+            class="card-img-start" alt="modelli double cut">
+          <div class="card-title pe-3 fw-bold fs-5">Modelli Double Cut</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/chitarre_elettriche/chitarre_semiacustiche">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/chitarre_elettriche/modelli_semiacustici.jpg"
+            class="card-img-start" alt="chitarre semiacustiche">
+          <div class="card-title pe-3 fw-bold fs-5">Chitarre Semiacustiche</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/chitarre_elettriche/chitarre_heavy">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/chitarre_elettriche/modelli_heavy.jpg"
+            class="card-img-start" alt="chitarre heavy">
+          <div class="card-title pe-3 fw-bold fs-5">Chitarre Heavy</div>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+    <div *ngIf="path=='chitarre_classiche'">Chitarre Classiche</div>
+    <div *ngIf="path=='chitarre_acustiche'">Chitarre Acustiche</div>
+    <div *ngIf="path=='chitarre_da_viaggio'">Chitarre Da Viaggio</div>
+    <div *ngIf="path=='amplificatori_chitarre_elettriche'">Amplificatori Chitarre Elettriche</div>
+    <div *ngIf="path=='amplificatori_chitarre_acustiche'">Amplificatori Chitarre Acustiche</div>
+    <div *ngIf="path=='corde'">Corde</div>
+    <div *ngIf="path=='effetti'">Effetti</div>
+
+  </div>
+</div>

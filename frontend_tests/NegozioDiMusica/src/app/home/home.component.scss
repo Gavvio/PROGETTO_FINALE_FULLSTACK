@@ -1,0 +1,67 @@
+.puntatore_link{
+  cursor: pointer;
+}
+
+.hover_viola{
+  //effetto angoli border tagliati
+  clip-path: polygon(0% 19.5%, 10% 0%, 90% 0%, 100% 19.5%, 100% 82.25%, 90% 100%, 10% 100%, 0% 82.25%);
+}
+
+.hover_viola:hover{
+  color: #7e00f3 !important;
+}
+
+.bordo_destro_variabile_1{
+  border-bottom: 1px solid #dee2e6 !important;
+  @media screen and (min-width:576px){
+    border-right: 1px solid #dee2e6 ;
+  }
+  @media screen and (min-width:992px){
+    border-right: none ;
+  }
+  @media screen and (min-width:1000px){
+    border-right: 1px solid #dee2e6 ;
+  }
+}
+
+.bordo_destro_variabile_2{
+  border-bottom: 1px solid #dee2e6 !important;
+  @media screen and (min-width:768px){
+    border-right: none ;
+  }
+  @media screen and (min-width:1000px){
+    border-right: 1px solid #dee2e6 ;
+  }
+}
+
+.bordo_destro_variabile_3{
+  border-bottom: 1px solid #dee2e6 !important;
+
+  @media screen and (min-width:576px){
+    border-right: 1px solid #dee2e6 ;
+  }
+  @media screen and (min-width:992px){
+    border-right: none;
+  }
+}
+
+.bordo_sinistro_variabile_1{
+  @media screen and (min-width:768px){
+    border-left: 1px solid #dee2e6;
+  }
+}
+
+.bordo_superiore_1{
+  @media screen and (min-width:576px){
+    border-top: 1px solid #dee2e6 ;
+  }
+}
+
+.bordo_superiore_2{
+  @media screen and (min-width:768px){
+    border-top: 1px solid #dee2e6 ;
+  }
+}
+
+
+

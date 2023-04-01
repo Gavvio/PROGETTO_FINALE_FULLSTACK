@@ -1,0 +1,26 @@
+<p>signup works!</p>
+<div class="mx-5 my-5">
+  <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)=onSubmit(f)>
+    <h2 class="text-center">signup</h2>
+    <div class="col-md-6">
+      <label for="inputName" class="form-label"></label>
+      <input type="text" class="form-control"  placeholder="nome" name="nome" ngModel>
+    </div>
+    <div class="col-md-6">
+      <label for="inputSurname" class="form-label"></label>
+      <input type="text" class="form-control" placeholder="cognome" name="cognome" ngModel>
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label"></label>
+      <input type="email" class="form-control" placeholder="email" name="email" ngModel>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label"></label>
+      <input type="password" class="form-control" placeholder="password" name="password" ngModel>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="button_signup">Sign up</button>
+    </div>
+  </form>
+</div>
