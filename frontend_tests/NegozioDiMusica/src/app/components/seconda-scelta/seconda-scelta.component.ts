@@ -19,14 +19,8 @@ export class SecondaSceltaComponent implements OnInit {
     else if (this.router.url == "/chitarre/chitarre_acustiche") {
       this.path = "chitarre_acustiche"
     }
-    else if (this.router.url == "/chitarre/chitarre_da_viaggio") {
-      this.path = "chitarre_da_viaggio"
-    }
     else if (this.router.url == "/chitarre/amplificatori_chitarre_elettriche") {
       this.path = "amplificatori_chitarre_elettriche"
-    }
-    else if (this.router.url == "/chitarre/amplificatori_chitarre_acustiche") {
-      this.path = "amplificatori_chitarre_acustiche"
     }
     else if (this.router.url == "/chitarre/corde") {
       this.path = "corde"

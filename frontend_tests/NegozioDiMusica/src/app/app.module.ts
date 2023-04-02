@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PrimaSceltaComponent } from './components/prima-scelta/prima-scelta.component';
 import { SecondaSceltaComponent } from './components/seconda-scelta/seconda-scelta.component';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { TerzaSceltaComponent } from './components/terza-scelta/terza-scelta.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ArticlesComponent } from './components/articles/articles.component';
     SignupComponent,
     PrimaSceltaComponent,
     SecondaSceltaComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    TerzaSceltaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,13 @@
+
 #logo_pagina{
   width: 200px;
   transition: transform 0.2s;
   &:hover{
     transform: scale(1.05);
   }
+}
+.sfondo_navbar{
+  background-color: #f3f3f3 !important;
 }
 
 .nav-pills{
@@ -15,7 +19,10 @@
       background-color: #1c1c1c!important;
     }
     .hover_viola:hover{
-      background-color: #6009b0 !important;
+      //background-color: #6009b0 !important;
+      //background-color: #9425fc;
+      //background:linear-gradient(225deg,#2c79c7,#62aefa);
+      background:radial-gradient(#2c79c7,#62aefa);
     }
   }
 }
@@ -24,6 +31,13 @@ nav{
   color: white !important;
 }
 
-#icona_user{
-  color:white;
+.active{
+  background-color: #9425fc !important;
 }
+
+#icona_user, #icona_preferiti,#icona_carrello{
+  color:black;
+  //stroke:black
+}
+
+

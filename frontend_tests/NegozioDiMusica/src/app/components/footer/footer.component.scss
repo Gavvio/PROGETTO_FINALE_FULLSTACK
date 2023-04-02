@@ -1,0 +1,57 @@
+* {
+  color: white;
+}
+
+.footer_background {
+  background-color: black !important;
+
+  @media screen and (min-width:576px) {
+    position: absolute !important;
+    bottom: 0 !important;
+    min-height: 8rem !important;
+    max-height: 15rem;
+  }
+
+  @media screen and (min-width:768px) {
+    position: absolute !important;
+    bottom: 0 !important;
+    height: 10rem !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+#hover_instagram,
+#hover_facebook,
+#hover_linkedin,
+#hover_whatsapp {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#hover_instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+
+}
+
+#hover_facebook:hover {
+  box-shadow: 0 5px 8px rgba(26, 35, 126, 0.50);
+  background: #3949ab;
+  background: linear-gradient(225deg, #3949ab 0%, #2196f3 100%);
+}
+
+#hover_linkedin:hover {
+  box-shadow: 0 5px 8px rgba(3, 169, 244, 0.50);
+  background: #0288d1;
+  background: linear-gradient(225deg, #0288d1 0%, #2196f3 100%);
+}
+
+#hover_whatsapp:hover {
+  color: #fff;
+  background:
+    linear-gradient(225deg, #25a353, #25d366)
+}
