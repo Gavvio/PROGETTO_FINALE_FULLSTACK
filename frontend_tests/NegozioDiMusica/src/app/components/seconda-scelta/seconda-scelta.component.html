@@ -1,5 +1,4 @@
-seconda scelta
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center altezza_seconda">
 
   <div class="container mt-3 mx-lg-5">
 
@@ -20,7 +19,7 @@ seconda scelta
           </ul>
         </nav>
       </div>
-
+      <h1 class="text-center">CHITARRE ELETTRICHE</h1>
       <div class="row d-flex justify-content-center">
 
         <div
@@ -91,7 +90,7 @@ seconda scelta
           </ul>
         </nav>
       </div>
-
+      <h1 class="text-center">CHITARRE CLASSICHE</h1>
       <div class="row d-flex justify-content-center">
 
         <div
@@ -163,7 +162,7 @@ seconda scelta
           </ul>
         </nav>
       </div>
-
+      <h1 class="text-center">CHITARRE ACUSTICHE</h1>
       <div class="row d-flex justify-content-center">
 
         <div
@@ -228,7 +227,7 @@ seconda scelta
           </ul>
         </nav>
       </div>
-
+      <h1 class="text-center">AMPLIFICATORI CHITARRE ELETTRICHE</h1>
       <div class="row d-flex justify-content-center">
 
         <div
@@ -279,8 +278,8 @@ seconda scelta
 
     </div>
 
-    <!----------------------------------------------------------------------SEZIONE CORDE------------------------------------------------------------------------------------------------>
-    <div *ngIf="path=='corde'">Corde
+    <!----------------------------------------------------------------------SEZIONE CORDE CHITARRA---------------------------------------------------------------------------------------->
+    <div *ngIf="path=='chitarre_corde'">
 
       <div class="mx-5">
 
@@ -298,7 +297,7 @@ seconda scelta
             </ul>
           </nav>
         </div>
-
+        <h1 class="text-center">CORDE CHITARRE</h1>
         <div class="row d-flex justify-content-center">
 
           <div
@@ -337,7 +336,376 @@ seconda scelta
     </div>
 
     <!----------------------------------------------------------------------SEZIONE EFFETTI---------------------------------------------------------------------------------------------->
-    <div *ngIf="path=='effetti'">Effetti
+    <div *ngIf="path=='chitarre_effetti'">
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Effetti</li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-center">EFFETTI CHITARRE</h1>
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/effetti/riverbero">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/riverberi.jpg" class="card-img-start"
+            alt="riverbero">
+          <div class="card-title pe-3 fw-bold fs-5">Riverbero</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/effetti/distorsione">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/distorsione.jpg"
+            class="card-img-start" alt="distorsione">
+          <div class="card-title pe-3 fw-bold fs-5">Distorsione</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/effetti/wahwah">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/wah-wah.jpg" class="card-img-start"
+            alt="wahwah">
+          <div class="card-title pe-3 fw-bold fs-5">WahWah</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/effetti/looper">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/looper.jpg" class="card-img-start"
+            alt="looper">
+          <div class="card-title pe-3 fw-bold fs-5">Looper</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/effetti/delay">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/delays-eco.jpg" class="card-img-start"
+            alt="delays">
+          <div class="card-title pe-3 fw-bold fs-5">Delays</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/chitarre/effetti/chorus">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/chorus-flanger-phaser.jpg"
+            class="card-img-start" alt="chorus">
+          <div class="card-title pe-3 fw-bold fs-5">Chorus</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!----------------------------------------------------------------------SEZIONE BASSI ELETTRICI--------------------------------------------------------------------------------------->
+    <div *ngIf="path=='bassi_elettrici'">
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/bassi">Bassi</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Bassi Elettrici</li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-center">BASSI ELETTRICI</h1>
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_elettrici/jazz_4_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_elettrici/jazz_4corde.jpg"
+            class="card-img-start" alt="bassi jazz 4 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Jazz 4 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_elettrici/jazz_5_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_elettrici/jazz_5corde.jpg"
+            class="card-img-start" alt="bassi jazz 5 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Jazz 5 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_elettrici/precision_4_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_elettrici/precision_4corde.jpg"
+            class="card-img-start" alt="bassi precision 4 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Precision 4 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_elettrici/precision_5_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_elettrici/precision_5corde.jpg"
+            class="card-img-start" alt="bassi precision 5 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Precision 5 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_elettrici/metal_4_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_elettrici/heavy_metal_4corde.jpg"
+            class="card-img-start" alt="bassi heavy metal 4 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Heavy Metal 4 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_elettrici/metal_5_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_elettrici/heavy_metal_5corde.jpg"
+            class="card-img-start" alt="bassi heavy metal 5 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Heavy Metal 5 Corde</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!----------------------------------------------------------------------SEZIONE BASSI ACUSTICI--------------------------------------------------------------------------------------->
+    <div *ngIf="path=='bassi_acustici'">
+
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/bassi">Bassi</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Bassi Acustici</li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-center">BASSI ACUSTICI</h1>
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_acustici/acustici_4_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_acustici/acustici_4corde.jpg"
+            class="card-img-start" alt="bassi acustici 4 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Acustici 4 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_acustici/acustici_5_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_acustici/acustici_5corde.jpg"
+            class="card-img-start" alt="bassi acustici 5 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Acustici 5 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_acustici/semi_acustici_4_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_acustici/semi_acustici_4corde.jpg"
+            class="card-img-start" alt="bassi semi acustici 4 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Semi Acustici 4 Corde</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/bassi_acustici/semi_acustici_5_corde">
+          <img src="../../../assets/immagini categorie/categoria_bassi/bassi_acustici/semi_acustici_5corde.jpg"
+            class="card-img-start" alt="bassi semi acustici 5 corde">
+          <div class="card-title pe-3 fw-bold fs-5">Bassi Semi Acustici 5 Corde</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!----------------------------------------------------------------------SEZIONE BASSI EFFETTI--------------------------------------------------------------------------------------->
+    <div *ngIf="path=='bassi_effetti'">
+
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/bassi">Bassi</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Effetti</li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-center">EFFETTI BASSI</h1>
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/effetti/riverbero">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/riverberi.jpg" class="card-img-start"
+            alt="riverbero">
+          <div class="card-title pe-3 fw-bold fs-5">Riverbero</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/effetti/distorsione">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/distorsione.jpg"
+            class="card-img-start" alt="distorsione">
+          <div class="card-title pe-3 fw-bold fs-5">Distorsione</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/effetti/wahwah">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/wah-wah.jpg" class="card-img-start"
+            alt="wahwah">
+          <div class="card-title pe-3 fw-bold fs-5">WahWah</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/effetti/looper">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/looper.jpg" class="card-img-start"
+            alt="looper">
+          <div class="card-title pe-3 fw-bold fs-5">Looper</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/effetti/delay">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/delays-eco.jpg" class="card-img-start"
+            alt="delays">
+          <div class="card-title pe-3 fw-bold fs-5">Delays</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/effetti/chorus">
+          <img src="../../../assets/immagini categorie/categoria_chitarre/effetti/chorus-flanger-phaser.jpg"
+            class="card-img-start" alt="chorus">
+          <div class="card-title pe-3 fw-bold fs-5">Chorus</div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div *ngIf="path=='bassi_corde'">
+
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/bassi">Bassi</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Corde Bassi</li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-center">CORDE BASSI</h1>
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/corde/corde_basso_elettrico">
+          <img src="../../../assets/immagini categorie/categoria_bassi/corde/corde_basso_elettrico.jpg"
+            class="card-img-start" alt="corde basso elettrico">
+          <div class="card-title pe-3 fw-bold fs-5">Corde Bassi Elettrici</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/corde/corde_basso_acustico">
+          <img src="../../../assets/immagini categorie/categoria_bassi/corde/corde_basso_acustico.jpg"
+            class="card-img-start" alt="corde basso acustico">
+          <div class="card-title pe-3 fw-bold fs-5">Corde Bassi Acustici</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!----------------------------------------------------------------------SEZIONE AMPLIFICATORI BASSI----------------------------------------------------------------------------------->
+    <div *ngIf="path=='bassi_amplificatori'">
+
+      <div class="container d-flex justify-content-center ">
+        <nav aria-label="breadcrumb d-flex align-items-center">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item puntatore_link">
+              <div routerLink="/">Home</div>
+            </li>
+            <li class="breadcrumb-item puntatore_link">
+              <div class="d-flex" routerLink="/bassi">Bassi</div>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Amplificatori Bassi</li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="text-center">AMPLIFICATORI BASSI</h1>
+      <div class="row d-flex justify-content-center">
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/amplificatori_bassi/combo">
+          <img src="../../../assets/immagini categorie/categoria_bassi/amplificatori_basso/combo.jpg"
+            class="card-img-start" alt="bassi combo">
+          <div class="card-title pe-3 fw-bold fs-5">Combo</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/amplificatori_bassi/testate">
+          <img src="../../../assets/immagini categorie/categoria_bassi/amplificatori_basso/testate.jpg"
+            class="card-img-start" alt="bassi testate">
+          <div class="card-title pe-3 fw-bold fs-5">Testate</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/amplificatori_bassi/cabinet_1x15">
+          <img src="../../../assets/immagini categorie/categoria_bassi/amplificatori_basso/cabinet_1-15.jpg"
+            class="card-img-start" alt="bassi cabinet 1 x 15">
+          <div class="card-title pe-3 fw-bold fs-5">Cabinet 1 X 15</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/amplificatori_bassi/cabinet_2x10">
+          <img src="../../../assets/immagini categorie/categoria_bassi/amplificatori_basso/cabinet_2-10.jpg"
+            class="card-img-start" alt="bassi cabinet 2 x 10">
+          <div class="card-title pe-3 fw-bold fs-5">Cabinet 2 X 10</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/amplificatori_bassi/cabinet_4x10">
+          <img src="../../../assets/immagini categorie/categoria_bassi/amplificatori_basso/cabinet_4-10.jpg"
+            class="card-img-start" alt="bassi cabinet 4 x 10">
+          <div class="card-title pe-3 fw-bold fs-5">Cabinet 4 X 10</div>
+        </div>
+
+        <div
+          class="col-12 col-sm-6 col-lg-4 d-flex flex-column align-items-center mx-auto mx-md-0 mb-2 mt-2  puntatore_link justify-content-center bordo_destro_variabile_1 hover_viola "
+          routerLink="/bassi/amplificatori_bassi/cabinet_8x10">
+          <img src="../../../assets/immagini categorie/categoria_bassi/amplificatori_basso/cabinet_8-10.jpg"
+            class="card-img-start" alt="bassi cabinet 8 x 10">
+          <div class="card-title pe-3 fw-bold fs-5">Cabinet 8 X 10</div>
+        </div>
+
+      </div>
 
     </div>
 

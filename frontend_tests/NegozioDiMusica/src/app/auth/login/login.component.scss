@@ -1,3 +1,44 @@
 a{
   text-decoration: none;
+  color: rgb(4, 101, 192);
+  &:hover{
+    color:#ec69fe;
+  }
+}
+
+h2,div:hover{
+  cursor: default;
+}
+.altezza{
+  position: relative;
+  padding-bottom: 10rem;
+}
+
+.bordo{
+  /*border: 1px solid black;
+  border-radius: 5px;*/
+  border: 3px solid;
+  border-radius: 5px;
+
+  /*border-image:
+    linear-gradient(
+      to bottom,
+      red,
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+    */
+    border-image: linear-gradient(45deg, #73e3ff, #ec69fe) 1;
+
+}
+
+.bottone{
+  background-image:linear-gradient(45deg, #73e3ff, #ec69fe) ;
+  color:black;
+  border: none;
+}
+
+.bottone:hover{
+  transition: transform 0.2s;
+  cursor: pointer;
+  transform: scale(1.05);
 }

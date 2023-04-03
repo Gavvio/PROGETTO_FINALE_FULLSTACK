@@ -36,6 +36,7 @@ const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.
 //batterie
 { path: 'batterie/batterie_acustiche', component: SecondaSceltaComponent },
 { path: 'batterie/batterie_elettroniche', component: SecondaSceltaComponent },
+{ path: 'batterie/bacchette', component: ArticlesComponent },
 //tastiere
 { path: 'tastiere/tastiere', component: SecondaSceltaComponent },
 { path: 'tastiere/piani', component: SecondaSceltaComponent },
@@ -74,7 +75,7 @@ const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.
 { path: 'chitarre/chitarre_acustiche/folk', component: ArticlesComponent },
 { path: 'chitarre/chitarre_acustiche/O-OO-OOO', component: ArticlesComponent },
 { path: 'chitarre/chitarre_acustiche/roundback', component: ArticlesComponent },
-//amplificatori_chitarre/elettriche
+//amplificatori_chitarre_elettriche
 { path: 'chitarre/amplificatori_chitarre_elettriche/combo', component: ArticlesComponent },
 { path: 'chitarre/amplificatori_chitarre_elettriche/testate', component: ArticlesComponent },
 { path: 'chitarre/amplificatori_chitarre_elettriche/cabinet_1-12', component: ArticlesComponent },
@@ -85,6 +86,42 @@ const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.
 { path: 'chitarre/corde/corde_classica', component: TerzaSceltaComponent },
 { path: 'chitarre/corde/corde_acustica', component: TerzaSceltaComponent },
 { path: 'chitarre/corde/corde_steel', component: ArticlesComponent },
+//effetti chitarra
+{ path: 'chitarre/effetti/riverbero', component: ArticlesComponent },
+{ path: 'chitarre/effetti/distorsione', component: ArticlesComponent },
+{ path: 'chitarre/effetti/wahwah', component: ArticlesComponent },
+{ path: 'chitarre/effetti/looper', component: ArticlesComponent },
+{ path: 'chitarre/effetti/delay', component: ArticlesComponent },
+{ path: 'chitarre/effetti/chorus', component: ArticlesComponent },
+//bassi elettrici
+{ path: 'bassi/bassi_elettrici/jazz_4_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_elettrici/jazz_5_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_elettrici/precision_4_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_elettrici/precision_5_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_elettrici/metal_4_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_elettrici/metal_5_corde', component: ArticlesComponent },
+//bassi acustici
+{ path: 'bassi/bassi_acustici/acustici_4_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_acustici/acustici_5_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_acustici/semi_acustici_4_corde', component: ArticlesComponent },
+{ path: 'bassi/bassi_acustici/semi_acustici_5_corde', component: ArticlesComponent },
+//amplificatori basso
+{ path: 'bassi/amplificatori_bassi/combo', component: ArticlesComponent },
+{ path: 'bassi/amplificatori_bassi/testate', component: ArticlesComponent },
+{ path: 'bassi/amplificatori_bassi/cabinet_1x15', component: ArticlesComponent },
+{ path: 'bassi/amplificatori_bassi/cabinet_2x10', component: ArticlesComponent },
+{ path: 'bassi/amplificatori_bassi/cabinet_4x10', component: ArticlesComponent },
+{ path: 'bassi/amplificatori_bassi/cabinet_8x10', component: ArticlesComponent },
+//effetti basso
+{ path: 'bassi/effetti/riverbero', component: ArticlesComponent },
+{ path: 'bassi/effetti/distorsione', component: ArticlesComponent },
+{ path: 'bassi/effetti/wahwah', component: ArticlesComponent },
+{ path: 'bassi/effetti/looper', component: ArticlesComponent },
+{ path: 'bassi/effetti/delay', component: ArticlesComponent },
+{ path: 'bassi/effetti/chorus', component: ArticlesComponent },
+//corde basso
+{ path: 'bassi/corde/corde_basso_elettrico', component: TerzaSceltaComponent },
+{ path: 'bassi/corde/corde_basso_acustico', component: TerzaSceltaComponent },
 ];
 
 @NgModule({

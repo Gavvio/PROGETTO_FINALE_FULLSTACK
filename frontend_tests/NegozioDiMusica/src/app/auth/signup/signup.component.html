@@ -1,30 +1,42 @@
-<div class="mx-5 my-5">
-  <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)=onSubmit(f)>
-    <h2 class="text-center">signup</h2>
-    <div class="col-md-6">
-      <label for="inputName" class="form-label"></label>
-      <input type="text" class="form-control" placeholder="nome" name="name" ngModel>
-    </div>
-    <div class="col-md-6">
-      <label for="inputSurname" class="form-label"></label>
-      <input type="text" class="form-control" placeholder="cognome" name="surname" ngModel>
-    </div>
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label"></label>
-      <input type="email" class="form-control" placeholder="email" name="email" ngModel>
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label"></label>
-      <input type="password" class="form-control" placeholder="password" name="password" ngModel>
-    </div>
+<div class="mx-5 my-5 altezza">
+  <div class="row d-flex justify-content-center">
 
-    <div class="d-flex flex-column">
-      <div class=" d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary" id="button_signup">Sign up</button>
+    <form
+      class="col-12 px-2 bordo py-2 bordo col-sm-8 col-md-6 col-lg-5 d-flex flex-column needs-validation justify-content-center"
+      #f="ngForm" (ngSubmit)=onSubmit(f)>
+
+      <h2 class="text-center">Register</h2>
+
+      <div class="justify-content-center">
+        <label for="inputName" class="form-label"></label>
+        <input type="text" class="form-control" placeholder="nome" name="name" ngModel>
       </div>
-      <div class="d-flex justify-content-center">
-        <a class="mx-auto" routerLink="../../auth/login">login</a>
+
+      <div class="justify-content-center">
+        <label for="inputSurname" class="form-label"></label>
+        <input type="text" class="form-control" placeholder="cognome" name="surname" ngModel>
       </div>
-    </div>
-  </form>
+
+      <div class="justify-content-center">
+        <label for="inputEmail4" class="form-label"></label>
+        <input type="email" class="form-control" placeholder="email" name="email" ngModel>
+      </div>
+
+      <div class="justify-content-center">
+        <label for="inputPassword4" class="form-label"></label>
+        <input type="password" class="form-control" placeholder="password" name="password" ngModel>
+      </div>
+
+      <div class="d-flex flex-column">
+        <div class=" d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary bottone my-3" id="button_signup">Sign up</button>
+        </div>
+        <div class="d-flex justify-content-center flex-column text-center">
+          Hai già un account?
+          <a class="mx-auto" routerLink="../../auth/login">Login</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>
