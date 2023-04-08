@@ -8,8 +8,12 @@
 
 .altezza_prima{
   position: relative;
+  @media screen and (max-width:360px) {
+    padding-bottom: 21rem;
+  }
+  padding-bottom: 20rem;
   @media screen and (min-width:576px) {
-    padding-bottom: 15rem  ;
+    padding-bottom: 15rem;
   }
   @media screen and (min-width:768px) {
     padding-bottom: 10rem !important;
@@ -18,4 +22,9 @@
 
 h1{
   font-family: 'Yeseva One', cursive;
+  font-weight: bold;
+}
+
+.active:hover,h1:hover{
+  cursor: default;
 }

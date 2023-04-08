@@ -29,18 +29,11 @@ export interface AuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  /*
-    authSubj = new BehaviorSubject<null|AuthResponse>(null)
-    authObs = this.authSubj.asObservable()
-      isLoggedIn$ = this.authObs.pipe(map(user => !!user));
-    loggedObs = this.authObs.pipe(map((res)=>{
-      if(res) {return true}
-      return false
-    }))
-    jwtHelper = new JwtHelperService
-  */
   url = "http://localhost:8080/api/auth/"
-  autoLogoutTimer: any;
+  autoLogoutTimer: Date=new Date();
+  isLoggedIn:boolean=false;
+  token="";
+  nomeUtente:string="";
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -50,6 +43,16 @@ export class AuthService {
 
   signin(data: {}) {
     return this.http.post<any>(this.url + "signin", data)
+  }
+
+  logOut(){
+    localStorage.removeItem('user')
+    localStorage.removeItem('date')
+    this.isLoggedIn=false;
+    this.nomeUtente="";
+    this.token="";
+    console.log("utente sloggato correttamente")
+    window.location.reload();
   }
 
 }

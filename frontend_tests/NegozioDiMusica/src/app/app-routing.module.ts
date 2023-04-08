@@ -7,9 +7,11 @@ import { PrimaSceltaComponent } from './components/prima-scelta/prima-scelta.com
 import { SecondaSceltaComponent } from './components/seconda-scelta/seconda-scelta.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { TerzaSceltaComponent } from './components/terza-scelta/terza-scelta.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 
 const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 { path: '', component: HomeComponent },
+{ path: 'favourites', component: FavouritesComponent },
 //categorie principali
 { path: 'chitarre', component: PrimaSceltaComponent },
 { path: 'bassi', component: PrimaSceltaComponent },
@@ -38,22 +40,22 @@ const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.
 { path: 'batterie/batterie_elettroniche', component: SecondaSceltaComponent },
 { path: 'batterie/bacchette', component: ArticlesComponent },
 //tastiere
-{ path: 'tastiere/tastiere', component: SecondaSceltaComponent },
-{ path: 'tastiere/piani', component: SecondaSceltaComponent },
-{ path: 'tastiere/piani_elettrici', component: SecondaSceltaComponent },
-{ path: 'tastiere/pianoforti', component: SecondaSceltaComponent },
-{ path: 'tastiere/amplificazione_tastiere', component: SecondaSceltaComponent },
+{ path: 'tastiere/tastiere', component: ArticlesComponent  },
+{ path: 'tastiere/piani', component: ArticlesComponent  },
+{ path: 'tastiere/piani_elettrici', component: ArticlesComponent  },
+{ path: 'tastiere/pianoforti', component: ArticlesComponent  },
+{ path: 'tastiere/amplificazione_tastiere', component: ArticlesComponent },
 //microfoni
-{ path: 'microfoni/microfoni_a_nastro', component: SecondaSceltaComponent },
-{ path: 'microfoni/microfoni_a_condensatore', component: SecondaSceltaComponent },
-{ path: 'microfoni/microfoni_ad_archetto', component: SecondaSceltaComponent },
-{ path: 'microfoni/microfoni_dinamici', component: SecondaSceltaComponent },
-{ path: 'microfoni/microfoni_broadcast', component: SecondaSceltaComponent },
+{ path: 'microfoni/microfoni_a_nastro', component: ArticlesComponent },
+{ path: 'microfoni/microfoni_a_condensatore', component: ArticlesComponent },
+{ path: 'microfoni/microfoni_ad_archetto', component: ArticlesComponent },
+{ path: 'microfoni/microfoni_dinamici', component: ArticlesComponent },
+{ path: 'microfoni/microfoni_broadcast', component: ArticlesComponent },
 //luci
-{ path: 'luci/luci_mobili', component: SecondaSceltaComponent },
-{ path: 'luci/luci_teatrali', component: SecondaSceltaComponent },
-{ path: 'luci/lasers', component: SecondaSceltaComponent },
-{ path: 'luci/strobo', component: SecondaSceltaComponent },
+{ path: 'luci/luci_mobili', component: ArticlesComponent },
+{ path: 'luci/luci_teatrali', component: ArticlesComponent },
+{ path: 'luci/lasers', component: ArticlesComponent },
+{ path: 'luci/strobo', component: ArticlesComponent },
 //seconde sottocategorie
 //chitarre elettriche
 { path: 'chitarre/chitarre_elettriche/stratocaster', component: ArticlesComponent },
@@ -121,7 +123,38 @@ const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.
 { path: 'bassi/effetti/chorus', component: ArticlesComponent },
 //corde basso
 { path: 'bassi/corde/corde_basso_elettrico', component: TerzaSceltaComponent },
-{ path: 'bassi/corde/corde_basso_acustico', component: TerzaSceltaComponent },
+{ path: 'bassi/corde/corde_basso_acustico', component: ArticlesComponent },
+//batterie acustiche
+{ path: 'batterie/batterie_acustiche/rullanti', component: ArticlesComponent },
+{ path: 'batterie/batterie_acustiche/timpani', component: ArticlesComponent },
+{ path: 'batterie/batterie_acustiche/piatti', component: ArticlesComponent },
+{ path: 'batterie/batterie_acustiche/toms', component: ArticlesComponent },
+{ path: 'batterie/batterie_acustiche/grancasse', component: ArticlesComponent },
+//batterie elettroniche
+{ path: 'batterie/batterie_elettroniche/pad_rullanti', component: ArticlesComponent },
+{ path: 'batterie/batterie_elettroniche/pad_piatti', component: ArticlesComponent },
+{ path: 'batterie/batterie_elettroniche/pad_grancasse', component: ArticlesComponent },
+{ path: 'batterie/batterie_elettroniche/pad_hi-hat', component: ArticlesComponent },
+//terze sottocategorie
+//corde chitarra elettrica
+{ path: 'chitarre/corde/corde_elettrica/008', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_elettrica/009', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_elettrica/010', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_elettrica/011', component: ArticlesComponent },
+//corde chitarra acustica
+{ path: 'chitarre/corde/corde_acustica/010', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_acustica/011', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_acustica/012', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_acustica/013', component: ArticlesComponent },
+//corde chitarra classica
+{ path: 'chitarre/corde/corde_classica/standard', component: ArticlesComponent },
+{ path: 'chitarre/corde/corde_classica/carbonio', component: ArticlesComponent },
+//corde basso elettrico
+{ path: 'bassi/corde/corde_basso_elettrico/040', component: ArticlesComponent},
+{ path: 'bassi/corde/corde_basso_elettrico/045', component: ArticlesComponent},
+{ path: 'bassi/corde/corde_basso_elettrico/050', component: ArticlesComponent},
+{ path: 'bassi/corde/corde_basso_elettrico/040_5_corde', component: ArticlesComponent},
+{ path: 'bassi/corde/corde_basso_elettrico/045_5_corde', component: ArticlesComponent},
 ];
 
 @NgModule({

@@ -8,7 +8,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import com.NegozioMusica.main.entities.Articolo;
 
 
 @Setter
@@ -25,12 +28,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String surname;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private String password;
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(name="PREFERITI", joinColumns=@JoinColumn(name="UTENTE_ID"),
+    inverseJoinColumns=@JoinColumn(name="ARTICOLO_ID"))
+    private List<Articolo> articoli;
     
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "users_roles",

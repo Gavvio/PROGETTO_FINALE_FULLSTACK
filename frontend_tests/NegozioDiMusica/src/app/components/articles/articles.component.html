@@ -1,1 +1,432 @@
-<p>articles works!</p>
+<div class="altezza_article">
+
+  <!-----------------------------------------------------------------------------SEZIONE STRATOCASTERS--------------------------------------------------------------------------------->
+  <div *ngIf="path=='stratocaster'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_elettriche">Chitarre Elettriche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Stratocaster</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">STRATOCASTERS</h1>
+    <div class="mx-5  pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill"
+                      viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Manico: {{elem.manico}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------------------------------------SEZIONE TELECASTERS--------------------------------------------------------------------------------------->
+  <div *ngIf="path=='telecaster'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_elettriche">Chitarre Elettriche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Telecaster</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">TELECASTERS</h1>
+    <div class="mx-5  pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill"
+                      viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Manico: {{elem.manico}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!---------------------------------------------------------------------------SEZIONE SINGLE CUT---------------------------------------------------------------------------------------->
+  <div *ngIf="path=='singlecut'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_elettriche">Chitarre Elettriche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">SingleCut</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">SINGLE CUT</h1>
+    <div class="mx-5  pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill"
+                      viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Manico: {{elem.manico}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="path=='doublecut'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_elettriche">Chitarre Elettriche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">DoubleCut</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">DOUBLE CUT</h1>
+    <div class="mx-5  pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill"
+                      viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Manico: {{elem.manico}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="path=='semiacustiche'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_elettriche">Chitarre Elettriche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">SemiAcustiche</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">SEMI ACUSTICHE</h1>
+    <div class="mx-5  pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill"
+                      viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Manico: {{elem.manico}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="path=='heavy'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_elettriche">Chitarre Elettriche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Heavy</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">HEAVY</h1>
+    <div class="mx-5  pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill"
+                      viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Manico: {{elem.manico}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

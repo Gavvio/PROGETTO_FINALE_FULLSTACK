@@ -13,10 +13,15 @@ import org.springframework.stereotype.Component;
 
 import com.NegozioMusica.auth.entity.ERole;
 import com.NegozioMusica.auth.entity.Role;
+import com.NegozioMusica.auth.entity.User;
 import com.NegozioMusica.auth.payload.RegisterDto;
 import com.NegozioMusica.auth.repository.RoleRepository;
 import com.NegozioMusica.auth.repository.UserRepository;
 import com.NegozioMusica.auth.service.AuthService;
+import com.NegozioMusica.main.entities.Articolo;
+import com.NegozioMusica.main.entities.ChitarraElettrica;
+import com.NegozioMusica.main.repositories.ArticoloRepository;
+import com.NegozioMusica.main.repositories.ChitarraElettricaRepository;
 
 
 @Component
@@ -26,6 +31,8 @@ public class AuthRunner implements ApplicationRunner {
 	@Autowired UserRepository userRepository;
 	@Autowired PasswordEncoder passwordEncoder;
 	@Autowired AuthService authService;
+	@Autowired ArticoloRepository articoloRepository;
+	@Autowired ChitarraElettricaRepository chitarraRepository;
 	
 	private Set<Role> adminRole;
 	private Set<Role> moderatorRole;
@@ -36,6 +43,13 @@ public class AuthRunner implements ApplicationRunner {
 		System.out.println("Run...");
 		//setRoleDefault();
 		//setUserDefault();
+		
+		//User mom=userRepository.findByEmail("domenico.frau@gmail.com");
+	       // System.out.println(mom);
+		//ChitarraElettrica mom=chitarraRepository.findById(1L).get();
+		//System.out.println(mom);
+		//System.out.println(articoloRepository.getById(1L));
+		
 		
 	}
 	

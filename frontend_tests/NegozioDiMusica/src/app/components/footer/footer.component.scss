@@ -4,7 +4,8 @@
 
 .footer_background {
   background-color: black !important;
-
+  position: absolute !important;
+  bottom: 0 !important;
   @media screen and (min-width:576px) {
     position: absolute !important;
     bottom: 0 !important;
@@ -42,20 +43,22 @@ a {
   box-shadow: 0 5px 8px rgba(26, 35, 126, 0.50);
   background: #3949ab;
   background: linear-gradient(225deg, #3949ab 0%, #2196f3 100%);
+  cursor: pointer;
+
 }
 
 #hover_linkedin:hover {
   box-shadow: 0 5px 8px rgba(3, 169, 244, 0.50);
   background: #0288d1;
   background: linear-gradient(225deg, #0288d1 0%, #2196f3 100%);
+  cursor: pointer;
 }
 
 #hover_whatsapp:hover {
   color: #fff;
   background:
-    linear-gradient(225deg, #25a353, #25d366)
+    linear-gradient(225deg, #25a353, #25d366);
+    cursor: pointer;
 }
 
-div:hover{
-  cursor: default;
-}
+

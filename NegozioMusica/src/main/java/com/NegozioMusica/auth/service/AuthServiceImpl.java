@@ -21,6 +21,9 @@ import com.NegozioMusica.auth.repository.RoleRepository;
 import com.NegozioMusica.auth.repository.UserRepository;
 import com.NegozioMusica.auth.security.JwtTokenProvider;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+
 @Service
 public class AuthServiceImpl implements AuthService {
 
@@ -64,7 +67,7 @@ public class AuthServiceImpl implements AuthService {
 
         // add check for email exists in database
         if(userRepository.existsByEmail(registerDto.getEmail())){
-            throw new MyAPIException(HttpStatus.BAD_REQUEST, "Email is already exists!.");
+            throw new MyAPIException(HttpStatus.BAD_REQUEST, "Email is already used!.");
         }
 
         User user = new User();
@@ -97,5 +100,6 @@ public class AuthServiceImpl implements AuthService {
     	else if(role.equals("ROLE_MODERATOR")) return ERole.ROLE_MODERATOR;
     	else return ERole.ROLE_USER;
     }
+    
     
 }

@@ -10,8 +10,19 @@ h2,div:hover{
   cursor: default;
 }
 .altezza{
+  /*position: relative;
+  padding-bottom: 10rem;*/
   position: relative;
-  padding-bottom: 10rem;
+  padding-bottom: 24rem !important;
+  @media screen and (min-width:390px) {
+    padding-bottom: 22rem !important;
+  }
+  @media screen and (min-width:576px) {
+    padding-bottom: 15rem !important;
+  }
+  @media screen and (min-width:768px) {
+    padding-bottom: 10rem !important;
+  }
 }
 
 .bordo{

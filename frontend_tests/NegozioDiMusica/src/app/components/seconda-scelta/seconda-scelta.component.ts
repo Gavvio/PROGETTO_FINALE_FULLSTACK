@@ -44,6 +44,12 @@ export class SecondaSceltaComponent implements OnInit {
     else if (this.router.url == "/bassi/amplificatori_bassi") {
       this.path = "bassi_amplificatori"
     }
+    else if (this.router.url == "/batterie/batterie_acustiche") {
+      this.path = "batterie_acustiche"
+    }
+    else if (this.router.url == "/batterie/batterie_elettroniche") {
+      this.path = "batterie_elettroniche"
+    }
   }
 
 }

@@ -74,4 +74,15 @@ public class JwtTokenProvider {
             throw new MyAPIException(HttpStatus.BAD_REQUEST, "JWT claims string is empty.");
         }
     }
+    
+    public String getEmailWithoutBearer(String token){
+        token = token.substring(7, token.length());
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(key())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        String email = claims.getSubject();
+        return email;
+    }
 }

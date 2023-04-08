@@ -18,12 +18,24 @@ export class SignupComponent {
       controllo=false;
       console.log("inserisci dati")
     }
+    const expression: RegExp =/^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
+    const result: boolean = expression.test(f.value.email);
+    if(result){
+     console.log("email valida")
+    }else{
+      console.log("email non valida");
+      controllo=false;
+    }
+
     console.log(f.value);
 
     if(controllo==true){
       console.log("dati corretti")
-      this.as.signup(f.value).subscribe((data)=>{
-
+      this.as.signup(f.value).subscribe( data=>{
+        console.log(data);
+        console.log("register eseguito correttamente")
+      }, error=>{
+        console.log("errore nel register",error);
       })
       this.r.navigate(["/auth/login"])
     }
