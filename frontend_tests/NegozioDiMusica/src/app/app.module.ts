@@ -15,6 +15,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { TerzaSceltaComponent } from './components/terza-scelta/terza-scelta.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     ArticlesComponent,
     TerzaSceltaComponent,
     FooterComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

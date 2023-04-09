@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-import { ChitarraElettrica, PreferitiPayload } from 'src/app/utils/interfacce';
+import { ChitarraElettrica, ArticoloPayload } from 'src/app/utils/interfacce';
 import { ArticlesService } from './articles.service';
 import { FavouritesService } from '../favourites/favourites.service';
 
@@ -15,7 +15,7 @@ export class ArticlesComponent implements OnInit {
 
   path: string = "";
   chitarre: ChitarraElettrica[] = [];
-  preferiti: PreferitiPayload[] = [];
+  preferiti: ArticoloPayload[] = [];
   loggato:boolean=false;
 
   constructor(private http: HttpClient, private as: AuthService, private router: Router, private ars: ArticlesService, private fs: FavouritesService) {
@@ -135,7 +135,7 @@ export class ArticlesComponent implements OnInit {
   }
 
 
-  getPreferiti() {
+  public getPreferiti() {
     this.fs.getPreferiti().subscribe(
       data => {
         console.log(data);
@@ -145,6 +145,10 @@ export class ArticlesComponent implements OnInit {
         console.log("errore nel login", error);
       }
     );
+  }
+
+  public dettaglio(id:number){
+    this.router.navigate([`/articolo/${id}`]);
   }
 }
 

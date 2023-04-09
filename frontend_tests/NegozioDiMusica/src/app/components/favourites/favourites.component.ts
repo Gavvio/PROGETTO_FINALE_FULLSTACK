@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
-import { PreferitiPayload } from 'src/app/utils/interfacce';
+import { ArticoloPayload } from 'src/app/utils/interfacce';
 import { FavouritesService } from './favourites.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { FavouritesService } from './favourites.service';
 })
 export class FavouritesComponent implements OnInit{
 
-preferiti:PreferitiPayload[]=[];
+preferiti:ArticoloPayload[]=[];
 
 constructor(private http:HttpClient,private as: AuthService,private fs:FavouritesService){
 
@@ -31,7 +31,7 @@ ngOnInit(): void {
    this.getPreferiti();
 }
 
-public controllo(c:PreferitiPayload){
+public controllo(c:ArticoloPayload){
   console.log("ok");
   let controllo:boolean=false;
 this.getPreferiti();
@@ -48,11 +48,11 @@ if(controllo==true){
 }
 }
 
-public aggiungiPreferiti(c:PreferitiPayload){
+public aggiungiPreferiti(c:ArticoloPayload){
   this.fs.aggiungiArticoloPreferiti(c.id);
 }
 
-public rimuoviPreferiti(c:PreferitiPayload){
+public rimuoviPreferiti(c:ArticoloPayload){
   this.fs.rimuoviArticoloPreferiti(c.id).subscribe(
     data=>{
       console.log(data);

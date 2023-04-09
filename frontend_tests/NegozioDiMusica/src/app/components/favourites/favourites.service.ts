@@ -2,17 +2,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
-import { PreferitiPayload } from 'src/app/utils/interfacce';
+import { ArticoloPayload } from 'src/app/utils/interfacce';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavouritesService {
 
-  preferiti:PreferitiPayload[]=[];
+  preferiti:ArticoloPayload[]=[];
   constructor(private http:HttpClient,private as:AuthService) { }
 
-  getPreferiti():Observable<PreferitiPayload[]>{
+  getPreferiti():Observable<ArticoloPayload[]>{
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

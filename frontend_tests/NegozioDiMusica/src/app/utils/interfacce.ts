@@ -3,7 +3,7 @@ export interface User{
   accessToken:string;
   }
 
-export interface PreferitiPayload{
+export interface ArticoloPayload{
   dtype:string;
   id: number;
   colore: string;
