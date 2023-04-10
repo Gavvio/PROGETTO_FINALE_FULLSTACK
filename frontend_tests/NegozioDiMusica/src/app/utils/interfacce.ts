@@ -22,6 +22,8 @@ export interface ArticoloPayload{
   immagine: string;
   tipoElettrica:string;
   tremolo:string;
+  corde:string;
+  tipoClassica:string;
 }
 
 export interface ChitarraElettrica {
@@ -43,4 +45,19 @@ export interface ChitarraElettrica {
   immagine: string;
   tipoElettrica:string;
   tremolo:string;
+}
+
+export interface ChitarraClassica{
+  id: number;
+  colore: string;
+  lunghezza_scala: string;
+  larghezza_scala: string;
+  tastiera: string;
+  corpo: string;
+  marca: string;
+  modello: string;
+  prezzo: number;
+  immagine: string;
+  corde:string;
+  tipoClassica:string;
 }

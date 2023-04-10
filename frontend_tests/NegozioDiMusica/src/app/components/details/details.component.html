@@ -1,7 +1,82 @@
-<p>details works!</p>
+<div class="altezza_dettaglio mx-4 my-3">
+  <div class="row mb-5">
+    <div class="col-12 col-lg-8">
+      <h1 id="titolo_dettaglio" class="text-center">{{articolo.marca}} {{articolo.modello}}</h1>
+      <div class="d-flex justify-content-center">
+        <img src="{{articolo.immagine.slice(0,-12)+'.jpg'}}" alt="immagine articolo" id="immagine_dettaglio">
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div>
+        <div class="prezzo d-flex justify-content-start align-items-center justify-content-lg-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-currency-euro icona_euro" viewBox="0 0 16 16">
+            <path
+              d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z" />
+          </svg>
+          {{articolo.prezzo}}
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+          <div *ngIf="loggato==true">
+            <div (click)="controllo(articolo)" *ngIf="coloreCuore(articolo.id)==false">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart icona_cuore"
+                viewBox="0 0 16 16">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+              </svg>
 
+            </div>
+            <div (click)="controllo(articolo)" *ngIf="coloreCuore(articolo.id)==true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#7e00f3" class="bi bi-heart-fill icona_cuore"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center justify-content-lg-start" id="parte_variabile">
+        <div *ngIf="articolo.tipoElettrica!=null" class="mx-2 mx-3">
+          <h3>Chitarra Elettrica</h3>
+          <ul class="list-group list-group-flush">
+            <li *ngIf="articolo.tipoElettrica=='STRATOCASTER'" class="list-group-item">Tipo: Stratocaster</li>
+            <li *ngIf="articolo.tipoElettrica=='TELECASTER'" class="list-group-item">Tipo: Telecaster</li>
+            <li *ngIf="articolo.tipoElettrica=='SINGLECUT'" class="list-group-item">Tipo: SingleCut</li>
+            <li *ngIf="articolo.tipoElettrica=='DOUBLECUT'" class="list-group-item">Tipo: DoubleCut</li>
+            <li *ngIf="articolo.tipoElettrica=='SEMIACUSTICHE'" class="list-group-item">Tipo: SemiAcustica</li>
+            <li *ngIf="articolo.tipoElettrica=='HEAVY'" class="list-group-item">Tipo: Heavy</li>
+            <li class="list-group-item">Colore: {{articolo.colore}}</li>
+            <li class="list-group-item">Corpo: {{articolo.corpo}}</li>
+            <li class="list-group-item">Manico: {{articolo.manico}}</li>
+            <li class="list-group-item">Tastiera: {{articolo.tastiera}}</li>
+            <li class="list-group-item">Lunghezza scala: {{articolo.lunghezza_scala}}</li>
+            <li class="list-group-item">Larghezza scala: {{articolo.larghezza_scala}}</li>
+            <li class="list-group-item">Tasti: {{articolo.tasti}}</li>
+            <li class="list-group-item">Controlli: {{articolo.controlli}}</li>
+            <li class="list-group-item">Pickup: {{articolo.pickup}}</li>
+            <li class="list-group-item">Inlay: {{articolo.inlay}}</li>
+            <li class="list-group-item">Tremolo: {{articolo.tremolo}}</li>
+          </ul>
+        </div>
+        <div *ngIf="articolo.tipoClassica!=null" class="mx-2 mx-3">
+          <ul class="list-group list-group-flush">
+            <li *ngIf="articolo.tipoClassica=='UNOTTAVO'" class="list-group-item">Dimensione: 1/8</li>
+            <li *ngIf="articolo.tipoClassica=='UNQUARTO'" class="list-group-item">Dimensione: 1/4</li>
+            <li *ngIf="articolo.tipoClassica=='UNMEZZO'" class="list-group-item">Dimensione: 1/2</li>
+            <li *ngIf="articolo.tipoClassica=='TREQUARTI'" class="list-group-item">Dimensione: 3/4</li>
+            <li *ngIf="articolo.tipoClassica=='SETTEOTTAVI'" class="list-group-item">Dimensione: 7/8</li>
+            <li *ngIf="articolo.tipoClassica=='QUATTROQUARTI'" class="list-group-item">Dimensione: 4/4</li>
+            <li class="list-group-item">Colore: {{articolo.colore}}</li>
+            <li class="list-group-item">Corpo: {{articolo.corpo}}</li>
+            <li class="list-group-item">Tastiera: {{articolo.tastiera}}</li>
+            <li class="list-group-item">Lunghezza scala: {{articolo.lunghezza_scala}}</li>
+            <li class="list-group-item">Larghezza scala: {{articolo.larghezza_scala}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<div>
-  <h1>{{articolo.marca}} {{articolo.modello}}</h1>
-  <img src="{{articolo.immagine.slice(0,-12)+'.jpg'}}" alt="immagine articolo">
+  </div>
+
 </div>

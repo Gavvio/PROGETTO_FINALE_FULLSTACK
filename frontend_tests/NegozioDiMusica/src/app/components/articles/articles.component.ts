@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-import { ChitarraElettrica, ArticoloPayload } from 'src/app/utils/interfacce';
+import { ChitarraElettrica, ArticoloPayload, ChitarraClassica } from 'src/app/utils/interfacce';
 import { ArticlesService } from './articles.service';
 import { FavouritesService } from '../favourites/favourites.service';
 
@@ -14,9 +14,11 @@ import { FavouritesService } from '../favourites/favourites.service';
 export class ArticlesComponent implements OnInit {
 
   path: string = "";
-  chitarre: ChitarraElettrica[] = [];
+  chitarre: ArticoloPayload[] = [];
+  chitarreClass: ChitarraClassica[]=[];
   preferiti: ArticoloPayload[] = [];
   loggato:boolean=false;
+  blocco:boolean=true;
 
   constructor(private http: HttpClient, private as: AuthService, private router: Router, private ars: ArticlesService, private fs: FavouritesService) {
 
@@ -68,7 +70,44 @@ export class ArticlesComponent implements OnInit {
         console.log(this.chitarre)
         this.path = "heavy";
       })
+    } else if(this.router.url=="/chitarre/chitarre_classiche/1-8"){
+      this.ars.loadChitarreClassicheUnOttavo().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "1-8";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_classiche/1-4"){
+      this.ars.loadChitarreClassicheUnQuarto().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "1-4";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_classiche/1-2"){
+      this.ars.loadChitarreClassicheUnMezzo().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "1-2";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_classiche/3-4"){
+      this.ars.loadChitarreClassicheTreQuarti().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "3-4";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_classiche/7-8"){
+      this.ars.loadChitarreClassicheSetteOttavi().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "7-8";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_classiche/4-4"){
+      this.ars.loadChitarreClassicheQuattroQuarti().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "4-4";
+      })
     }
+
 
     if(this.loggato){
       this.getPreferiti();
@@ -84,7 +123,7 @@ export class ArticlesComponent implements OnInit {
       console.log("errore nel login",error);
     })*/
 
-  public aggiungiPreferiti(c: ChitarraElettrica) {
+  public aggiungiPreferiti(c: ArticoloPayload) {
     this.fs.aggiungiArticoloPreferiti(c.id).subscribe(
       data => {
         console.log(data);
@@ -96,7 +135,7 @@ export class ArticlesComponent implements OnInit {
     )
   }
 
-  public rimuoviPreferiti(c: ChitarraElettrica) {
+  public rimuoviPreferiti(c: ArticoloPayload) {
     this.fs.rimuoviArticoloPreferiti(c.id).subscribe(
       data => {
         console.log(data);
@@ -108,7 +147,8 @@ export class ArticlesComponent implements OnInit {
     )
   }
 
-  public controllo(c: ChitarraElettrica) {
+  public controllo(c: ArticoloPayload) {
+    this.blocco=false;
     console.log("ok");
     let controllo: boolean = false;
     this.getPreferiti();
@@ -148,7 +188,10 @@ export class ArticlesComponent implements OnInit {
   }
 
   public dettaglio(id:number){
-    this.router.navigate([`/articolo/${id}`]);
+    if(this.blocco==true){
+      this.router.navigate([`/articolo/${id}`]);
+    }
+    this.blocco=true;
   }
 }
 

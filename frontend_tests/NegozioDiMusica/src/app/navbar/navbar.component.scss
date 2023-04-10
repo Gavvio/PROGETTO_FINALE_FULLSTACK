@@ -1,93 +1,110 @@
-
-#logo_pagina{
+#logo_pagina {
   //width: 200px;
   width: 150px;
   transition: transform 0.2s;
-  &:hover{
+
+  &:hover {
     transform: scale(1.05);
   }
+
   @media screen and (min-width:992px) {
-    width:200px !important;
+    width: 200px !important;
   }
 }
-.sfondo_navbar{
+
+.sfondo_navbar {
   background-color: #f3f3f3 !important;
 }
-div{
-  color: rgb(0, 0, 0);
-}
 
-.scelte{
-  &:hover{
-    cursor:pointer !important;
+.scelte {
+  &:hover {
+    cursor: pointer !important;
     background-color: #f3f3f3 !important;
   }
 }
 
-.search{
+.search {
   width: 100% !important;
   border-radius: 15px !important;
   border: none !important;
   background-color: white;
 }
 
-.search_vera{
+.search_vera {
   width: 100% !important;
   border-radius: 15px !important;
   border: none !important;
-  background-color:#f3f3f3 ;
+  background-color: #f3f3f3;
 }
 
-.bianco{
+.bianco {
   background-color: white !important;
 }
 
-.nav-pills{
-  a{
+.nav-pills {
+  a {
     color: white;
   }
-  li{
-    a.active{
-      background-color: #1c1c1c!important;
+
+  li {
+    a.active {
+      background-color: #1c1c1c !important;
     }
 
   }
 }
-.hover_viola:hover{
+
+.hover_viola:hover {
   //background-color: #6009b0 !important;
   //background-color: #9425fc;
   //background:linear-gradient(225deg,#2c79c7,#62aefa);
   //background:radial-gradient(#2c79c7,#62aefa);
-  background:linear-gradient(45deg, #73e3ff, #ec69fe);
+
   border: none;
   border-radius: 5px;
-  cursor:pointer !important;
-}
-nav{
-  background-color: black !important;
-  color: white !important;
+  cursor: pointer !important;
+  background: linear-gradient(45deg, #73e3ff,#ec69fe );
+
+  // @media (prefers-color-scheme: light) {
+  //   background: linear-gradient(45deg, #73e3ff,#ec69fe );
+  // }
+
+  // @media (prefers-color-scheme: dark) {
+  //   background: linear-gradient(45deg, #dc0002,#050000 );
+  // }
 }
 
-.active{
+
+
+.active {
   background-color: #9425fc !important;
 }
 
-#icona_user, #icona_preferiti,#icona_carrello{
-  color:black;
+#icona_user,
+#icona_preferiti,
+#icona_carrello {
+
   //stroke:black
   padding: 5px;
+  color: black;
+
+  // @media (prefers-color-scheme: light) {
+  //   color: black;
+  // }
+
+  // @media (prefers-color-scheme: dark) {
+  //  color: white;
+  // }
 }
 
-#logout{
-  background:linear-gradient(45deg, #73e3ff, #ec69fe);
+#logout {
+  background: linear-gradient(45deg, #73e3ff,#ec69fe );
   border: none;
   border-radius: 5px;
   color: white;
   transition: transform 0.2s;
-  &:hover{
+
+  &:hover {
     transform: scale(1.05);
   }
 }
-
-
-

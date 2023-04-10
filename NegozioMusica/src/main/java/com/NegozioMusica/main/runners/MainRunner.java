@@ -9,8 +9,11 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import com.NegozioMusica.main.entities.ChitarraClassica;
 import com.NegozioMusica.main.entities.ChitarraElettrica;
+import com.NegozioMusica.main.services.ChitarraClassicaService;
 import com.NegozioMusica.main.services.ChitarraElettricaService;
+import com.NegozioMusica.main.utils.ChitarreClassiche;
 import com.NegozioMusica.main.utils.ChitarreElettriche;
 
 
@@ -18,6 +21,8 @@ import com.NegozioMusica.main.utils.ChitarreElettriche;
 public class MainRunner implements ApplicationRunner {
 	@Autowired
 	ChitarraElettricaService elchitServ;
+	@Autowired
+	ChitarraClassicaService classchitServ;
 
 	void creaChitarraElettrica(String colore, String controlli, String corpo, String inlay, String larghezza,
 			String lunghezza, String manico, String pickup, int tasti, String tastiera, double prezzo, String modello,
@@ -41,53 +46,49 @@ public class MainRunner implements ApplicationRunner {
 		chitmom.setTremolo(tremolo);
 		elchitServ.chitarraElettricaSalvaAggiorna(chitmom);
 	}
+	
+	void creaChitarraClassica(String modello,String marca,String immagine, String corpo,String tastiera,String larghezza,String lunghezza,String corde,String colore,double prezzo,ChitarreClassiche tipo) {
+		ChitarraClassica chitmom= new ChitarraClassica();
+		chitmom.setColore(colore);
+		chitmom.setCorpo(corpo);
+		chitmom.setImmagine(immagine);
+		chitmom.setLarghezza_scala(larghezza);
+		chitmom.setLunghezza_scala(lunghezza);
+		chitmom.setMarca(marca);
+		chitmom.setModello(modello);
+		chitmom.setPrezzo(prezzo);
+		chitmom.setTastiera(tastiera);
+		chitmom.setTipoClassica(tipo);
+		classchitServ.chitarraClassicaSalvaAggiorna(chitmom);
+	}
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("main runner on");
 		
-		// (String colore, String controlli, String corpo, String inlay, String
-		// larghezza, String lunghezza, String manico, String pickup, int tasti, String
-		// tastiera, double prezzo, String modello,ChitarreElettriche tipo,String marca, String tremolo
-		// String immagine)
-		
-		// 10 HEAVY
-
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-//		creaChitarraElettrica("rosso ferrari", "1 volume, 1 tono", "pioppo", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "2 Jackson high-output humbuckers", 24, "amaranto", 347, "JS32 Kelly Ferrari Red AH", ChitarreElettriche.HEAVY, "Jackson", "Floyd Rose licensed double locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/JS32 Kelly Ferrari Red AH ricerca.jpg");
-//	
-//		creaChitarraElettrica("viola trasparente", "1 volume, 1 tono", "ontano", "punti madreperla", "43mm", "648mm", "acero", "Seymour Duncan Trembucker(ponte) e humbucker Jazz (manico)", 24, "ebano", 8222, "Soloist SL2H QMT Purple USA", ChitarreElettriche.HEAVY, "Jackson", "Original Floyd Rose","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/Soloist SL2H QMT Purple USA ricerca.jpg");
-//	
-//		creaChitarraElettrica("rosso ferrari", "1 volume, 1 tono", "ontano selezionato", "punti blu laterali", "43mm", "648mm", "acero", "2 DiMarzio Occult Classic humbuckers", 24, "ebano", 8799, "Dave Davidson Warrior FR LTD", ChitarreElettriche.HEAVY, "Jackson", "Floyd Rose Original Double Locking 2-Point","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/Dave Davidson Warrior FR LTD ricerca.jpg");
-//
-		
-		
-		
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-//		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
-//
-
-		
-		
 		//CREA ELETTRICHE
 		
-//		creaStratocasters();
-//		creaTelecasters();
-//		creaSingleCuts();
-//		creaDoubleCuts();
-//		creaSemiAcustiche();
-//		creaHeavy();
+//      creaElettriche();
+		creaClassiche();
 
+	}
+	
+	public void creaElettriche() {
+		creaStratocasters();
+		creaTelecasters();
+		creaSingleCuts();
+		creaDoubleCuts();
+		creaSemiAcustiche();
+		creaHeavy();
+	}
+	
+	public void creaClassiche() {
+		creaUnOttavo();
+		creaUnQuarto();
+		creaUnMezzo();
+		creaTreQuarti();
+		creaSetteOttavi();
+		creaQuattroQuarti();
 	}
 	
 	public void creaStratocasters(){
@@ -231,6 +232,52 @@ public class MainRunner implements ApplicationRunner {
 	}
 	
 	public void creaHeavy() {
+		
+		// 10 HEAVY
+
+		creaChitarraElettrica("nero, con smussatura gialla", "2 volume, 1 tono", "tiglio", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "humbucker Seymour Duncan AHB1BN (manico) e AHB-1B (ponte)", 24, "alloro", 798, "RRX24 Black with Yellow Bevels", ChitarreElettriche.HEAVY, "Jackson", "Sunken Floyd Rose special double-locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/RRX24 Black with Yellow Bevels ricerca.jpg");
+
+		creaChitarraElettrica("rosso ferrari", "1 volume, 1 tono", "pioppo", "pinna di squalo perlati rovesciati", "42,8mm", "648mm", "acero", "2 Jackson high-output humbuckers", 24, "amaranto", 347, "JS32 Kelly Ferrari Red AH", ChitarreElettriche.HEAVY, "Jackson", "Floyd Rose licensed double locking","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/JS32 Kelly Ferrari Red AH ricerca.jpg");
+	
+		creaChitarraElettrica("viola trasparente", "1 volume, 1 tono", "ontano", "punti madreperla", "43mm", "648mm", "acero", "Seymour Duncan Trembucker(ponte) e humbucker Jazz (manico)", 24, "ebano", 8222, "Soloist SL2H QMT Purple USA", ChitarreElettriche.HEAVY, "Jackson", "Original Floyd Rose","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/Soloist SL2H QMT Purple USA ricerca.jpg");
+	
+		creaChitarraElettrica("rosso ferrari", "1 volume, 1 tono", "ontano selezionato", "punti blu laterali", "43mm", "648mm", "acero", "2 DiMarzio Occult Classic humbuckers", 24, "ebano", 8799, "Dave Davidson Warrior FR LTD", ChitarreElettriche.HEAVY, "Jackson", "Floyd Rose Original Double Locking 2-Point","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/Dave Davidson Warrior FR LTD ricerca.jpg");
+	
+		creaChitarraElettrica("nero lucido", "1 volume, 1 tono", "tiglio", "punti bianchi", "43mm", "648mm", "acero", "2 humbucker high gain", 24,"amaranto", 119, "WL-20BK Rock Series", ChitarreElettriche.HEAVY, "Harley Benton", "no","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/WL-20BK Rock Series ricerca.jpg");
+		
+		creaChitarraElettrica("naturale antico", "2 volume, 1 tono", "mogano", "punti bianchi", "42mm", "628mm", "mogano, incollato", "2 humbucker Roswell LAF AlNiCo-5", 22, "amaranto", 355, "EX-76 Classic GHW AN", ChitarreElettriche.HEAVY, "Harley Benton", "no","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/EX-76 Classic GHW AN ricerca.jpg");
+	
+		creaChitarraElettrica("consumato e bruciato", "1 volume, 1 tono", "ontano", "punti bianchi grandi", "42mm", "648mm", "acero", "active EMG 81 (ponte) and EMG 81 (manico) humbuckers", 24, "palissandro", 3199, "E-II RZK-II Burnt", ChitarreElettriche.HEAVY, "ESP", "Original Floyd Rose","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/E-II RZK-II Burnt ricerca.jpg");
+		
+		creaChitarraElettrica("nero opaco", "2 volume", "mogano", "punti bianchi", "42mm", "628mm", "mogano", "2 Active EMG JH humbuckers", 22, "ebano", 5399, "Snakebyte BLKS James Hetfield", ChitarreElettriche.HEAVY, "ESP", "no","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/Snakebyte BLKS James Hetfield ricerca.jpg");
+	
+		creaChitarraElettrica("esplosione oro satinato", "1 volume, 1 tono", "mogano", "punti laterali luce nel buio", "41,3mm", "648mm", "mogano", "Sustainiac (ponte) and Schecter USA Synyster Gates signature humbucker (manico)", 24, "ebano", 1799, "Synyster Gates Custom S SGB", ChitarreElettriche.HEAVY, "Schecter", "Floyd Rose 1500 Series","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/Synyster Gates Custom S SGB ricerca.jpg");
+
+		creaChitarraElettrica("esplosione antica sbiadita", "1 volume, 1 tono", "frassino", "punti inversi", "42mm", "648mm", "acero", "Fishman Fluence Modern ceramic magnet (ponte) humbucker - Sustainiac (manico)", 24, "ebano", 1855, "C-1 SLS Elite FR S AFB", ChitarreElettriche.HEAVY, "Schecter", "Floyd Rose 1500 Series","../../../assets/immagini_prodotti/chitarre_elettriche/heavy/C-1 SLS Elite FR S AFB ricerca.jpg");
+
+	}
+	
+	public void creaUnOttavo(){
+	//	creaChitarraClassica("CG 851 1/8", "Startone", "../../../assets/immagini_prodotti/chitarre_classiche/1-8/CG 851 1-8 ricerca.jpg", "tiglio", "acero", "39mm", "465mm", "nylon", "marrone chiaro satinato", 38, ChitarreClassiche.UNOTTAVO);
+	}
+	
+	public void creaUnQuarto() {
+		
+	}
+	
+	public void creaUnMezzo() {
+		
+	}
+	
+	public void creaTreQuarti() {
+		
+	}
+	
+	public void creaSetteOttavi() {
+		
+	}
+	
+	public void creaQuattroQuarti() {
 		
 	}
 }

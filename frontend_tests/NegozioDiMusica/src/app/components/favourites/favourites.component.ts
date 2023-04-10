@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ArticoloPayload } from 'src/app/utils/interfacce';
 import { FavouritesService } from './favourites.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favourites',
@@ -12,8 +13,9 @@ import { FavouritesService } from './favourites.service';
 export class FavouritesComponent implements OnInit{
 
 preferiti:ArticoloPayload[]=[];
+blocco:boolean=true;
 
-constructor(private http:HttpClient,private as: AuthService,private fs:FavouritesService){
+constructor(private http:HttpClient,private as: AuthService,private fs:FavouritesService,private router:Router){
 
 }
 
@@ -32,6 +34,7 @@ ngOnInit(): void {
 }
 
 public controllo(c:ArticoloPayload){
+  this.blocco=false;
   console.log("ok");
   let controllo:boolean=false;
 this.getPreferiti();
@@ -86,6 +89,10 @@ getPreferiti(){
   );
 }
 
-
-
+public dettaglio(id:number){
+  if(this.blocco==true){
+    this.router.navigate([`/articolo/${id}`]);
+  }
+  this.blocco=true;
+}
 }

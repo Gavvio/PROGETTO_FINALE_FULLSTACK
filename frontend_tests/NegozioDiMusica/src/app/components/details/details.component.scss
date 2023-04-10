@@ -1,0 +1,89 @@
+.altezza_dettaglio{
+  position: relative;
+  @media screen and (max-width:360px) {
+    padding-bottom: 21rem;
+  }
+  padding-bottom: 20rem;
+  @media screen and (min-width:576px) {
+    padding-bottom: 15rem;
+  }
+  @media screen and (min-width:768px) {
+    padding-bottom: 10rem !important;
+  }
+}
+
+h1{
+  font-family: 'Yeseva One', cursive;
+  font-weight: bold;
+}
+
+#immagine_dettaglio{
+
+  width: 200px;
+  @media screen and (min-width:576px) {
+   width: 420px;
+  }
+  @media screen and (min-width:992px) {
+    width: 500px;
+   }
+}
+
+#titolo_dettaglio{
+  font-size: 21px;
+  line-height: 26px;
+  @media screen and (min-width:576px) {
+   font-size: 24px;
+   line-height: 32px;
+  }
+  @media screen and (min-width:992px) {
+    font-size: 40px;
+    line-height: 48px;
+   }
+   &:hover{
+    cursor:default;
+   }
+}
+
+.prezzo{
+  line-height: 40px;
+  font-size: 34px;
+  font-weight: 700;
+  @media screen and (min-width:992px) {
+    font-size: 74px;
+    line-height: 74px;
+   }
+   font-family: 'Chivo Mono', monospace;
+   &:hover{
+    cursor:default;
+   }
+}
+
+.icona_euro{
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  @media screen and (min-width:992px) {
+    width: 47px !important;
+    height: 47px !important;
+   }
+}
+
+.icona_cuore{
+  width: 26px !important;
+  height: 26px !important;
+  &:hover{
+    cursor:pointer;
+  }
+}
+
+#parte_variabile{
+  font-size: 14px;
+  line-height: 22px;
+  @media screen and (min-width:992px) {
+    font-size: 16px;
+    line-height: 22px;
+   }
+   &:hover{
+    cursor:default;
+   }
+}

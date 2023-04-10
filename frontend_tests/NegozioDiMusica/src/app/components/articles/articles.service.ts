@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ArticoloPayload, ChitarraElettrica } from 'src/app/utils/interfacce';
+import { ArticoloPayload, ChitarraClassica, ChitarraElettrica } from 'src/app/utils/interfacce';
 
 @Injectable({
   providedIn: 'root'
@@ -21,30 +21,52 @@ export class ArticlesService {
     return this.http.get<ArticoloPayload[]>(this.url+"all")
   }
 
-  public loadChitarreElettricheStratocaster():Observable<ChitarraElettrica[]>{
-    return this.http.get<ChitarraElettrica[]>(this.url+"chitarre_elettriche/stratocaster")
+  public loadChitarreElettricheStratocaster():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_elettriche/stratocaster")
   }
 
-  public loadChitarreElettricheTelecaster():Observable<ChitarraElettrica[]>{
-    return this.http.get<ChitarraElettrica[]>(this.url+"chitarre_elettriche/telecaster")
+  public loadChitarreElettricheTelecaster():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_elettriche/telecaster")
   }
 
-  public loadChitarreElettricheSingleCut():Observable<ChitarraElettrica[]>{
-    return this.http.get<ChitarraElettrica[]>(this.url+"chitarre_elettriche/singlecut")
+  public loadChitarreElettricheSingleCut():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_elettriche/singlecut")
   }
 
-  public loadChitarreElettricheDoubleCut():Observable<ChitarraElettrica[]>{
-    return this.http.get<ChitarraElettrica[]>(this.url+"chitarre_elettriche/doublecut")
+  public loadChitarreElettricheDoubleCut():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_elettriche/doublecut")
   }
 
-  public loadChitarreElettricheSemiAcustiche():Observable<ChitarraElettrica[]>{
-    return this.http.get<ChitarraElettrica[]>(this.url+"chitarre_elettriche/semiacustiche")
+  public loadChitarreElettricheSemiAcustiche():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_elettriche/semiacustiche")
   }
 
-  public loadChitarreElettricheHeavy():Observable<ChitarraElettrica[]>{
-    return this.http.get<ChitarraElettrica[]>(this.url+"chitarre_elettriche/heavy")
+  public loadChitarreElettricheHeavy():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_elettriche/heavy")
   }
 
+  public loadChitarreClassicheUnOttavo():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/1-8")
+  }
 
+  public loadChitarreClassicheUnQuarto():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/1-4")
+  }
+
+  public loadChitarreClassicheUnMezzo():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/1-2")
+  }
+
+  public loadChitarreClassicheTreQuarti():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/3-4")
+  }
+
+  public loadChitarreClassicheSetteOttavi():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/7-8")
+  }
+
+  public loadChitarreClassicheQuattroQuarti():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/4-4")
+  }
 
 }
