@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
@@ -9,8 +9,15 @@ import { Router } from '@angular/router';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit{
+  occhio:boolean=false;
+  inputType:string="password"
+  password!:HTMLInputElement;
   constructor(private as: AuthService, private http:HttpClient,private r : Router){}
+
+ngOnInit(): void {
+  this.password=<HTMLInputElement>document.querySelector("#passwordInputRegister");
+}
 
   onSubmit(f: NgForm) {
     let controllo=true;
@@ -40,5 +47,18 @@ export class SignupComponent {
       this.r.navigate(["/auth/login"])
     }
 
+  }
+
+  occhioCambia(){
+
+    if(this.occhio){
+      this.occhio=false
+      console.log(this.password)
+      this.password.type="password"
+    }else{
+      this.occhio=true
+      console.log(this.password)
+      this.password.type="text"
+    }
   }
 }

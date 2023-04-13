@@ -38,6 +38,10 @@ public class User {
     @JoinTable(name="PREFERITI", joinColumns=@JoinColumn(name="UTENTE_ID"),
     inverseJoinColumns=@JoinColumn(name="ARTICOLO_ID"))
     private List<Articolo> articoli;
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(name="CARRELLO", joinColumns=@JoinColumn(name="UTENTE_ID"),
+    inverseJoinColumns=@JoinColumn(name="ARTICOLO_ID"))
+    private List<Articolo> carrello;
     
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(name = "users_roles",

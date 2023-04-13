@@ -108,3 +108,18 @@
     transform: scale(1.05);
   }
 }
+
+.no_hover{
+  cursor: default;
+}
+
+#carrello{
+position: relative;
+}
+
+#notifiche{
+position:absolute;
+top: -5px;
+right:-5px;
+background-color: #9425fc !important;
+}

@@ -1,0 +1,66 @@
+.carrello_pagina{
+  position: relative;
+  @media screen and (max-width:360px) {
+    padding-bottom: 21rem;
+  }
+  padding-bottom: 20rem;
+  @media screen and (min-width:576px) {
+    padding-bottom: 15rem;
+  }
+  @media screen and (min-width:768px) {
+    padding-bottom: 10rem !important;
+  }
+}
+
+.carta{
+  transition: transform 0.2s;
+&:hover{
+  transform: scale(1.01);
+  cursor:pointer;
+}
+img{
+  @media screen and (max-width:576px) {
+    width:80px;
+    height: 80px;
+
+  }
+  @media screen and (min-width:577px) {
+    width:148px;
+    height: 148px;
+  }
+}
+
+.carrello{
+
+  border-radius: 8px;
+  padding: 9px;
+  background-color: #ecacf5;
+  transition: transform 0.2s;
+  &:hover{
+    transform: scale(1.15);
+  }
+}
+}
+#bottone{
+  height: 30px !important;
+  border-radius: 25px  !important;
+  padding: 10px  !important;
+  background-color: #ecacf5  !important;
+  @media screen and (min-width:992px) {
+    padding: 25px !important;
+  }
+  @media screen and (min-width:1182px) {
+    padding: 10px  !important;
+  }
+  transition: transform 0.2s;
+  &:hover{
+    transform: scale(1.05);
+    cursor:pointer;
+  }
+}
+
+.default_cursor{
+  &:hover{
+    cursor: default !important;
+  }
+}

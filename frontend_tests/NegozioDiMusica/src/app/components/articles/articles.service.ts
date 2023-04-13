@@ -69,4 +69,28 @@ export class ArticlesService {
     return this.http.get<ArticoloPayload[]>(this.url+"chitarre_classiche/4-4")
   }
 
+  public loadChitarreAcusticheDreadnought():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_acustiche/dreadnought")
+  }
+
+  public loadChitarreAcusticheJumbo():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_acustiche/jumbo")
+  }
+
+  public loadChitarreAcusticheFolk():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_acustiche/folk")
+  }
+
+  public loadChitarreAcusticheOoooo():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_acustiche/ooooo")
+  }
+
+  public loadChitarreAcusticheRoundback():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_acustiche/roundback")
+  }
+
+  public loadChitarreAcusticheDaViaggio():Observable<ArticoloPayload[]>{
+    return this.http.get<ArticoloPayload[]>(this.url+"chitarre_acustiche/daviaggio")
+  }
+
 }

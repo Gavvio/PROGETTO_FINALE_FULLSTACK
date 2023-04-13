@@ -9,10 +9,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import com.NegozioMusica.auth.service.ChitarraAcusticaService;
+import com.NegozioMusica.main.entities.ChitarraAcustica;
 import com.NegozioMusica.main.entities.ChitarraClassica;
 import com.NegozioMusica.main.entities.ChitarraElettrica;
 import com.NegozioMusica.main.services.ChitarraClassicaService;
 import com.NegozioMusica.main.services.ChitarraElettricaService;
+import com.NegozioMusica.main.utils.ChitarreAcustiche;
 import com.NegozioMusica.main.utils.ChitarreClassiche;
 import com.NegozioMusica.main.utils.ChitarreElettriche;
 
@@ -23,6 +26,8 @@ public class MainRunner implements ApplicationRunner {
 	ChitarraElettricaService elchitServ;
 	@Autowired
 	ChitarraClassicaService classchitServ;
+	@Autowired
+	ChitarraAcusticaService acustchiServ;
 
 	void creaChitarraElettrica(String colore, String controlli, String corpo, String inlay, String larghezza,
 			String lunghezza, String manico, String pickup, int tasti, String tastiera, double prezzo, String modello,
@@ -61,6 +66,21 @@ public class MainRunner implements ApplicationRunner {
 		chitmom.setTipoClassica(tipo);
 		classchitServ.chitarraClassicaSalvaAggiorna(chitmom);
 	}
+	
+	void creaChitarraAcustica(String modello,String marca,String immagine, String corpo,String tastiera,String larghezza,String lunghezza,String colore,double prezzo,ChitarreAcustiche tipo) {
+		ChitarraAcustica chitmom= new ChitarraAcustica();
+		chitmom.setColore(colore);
+		chitmom.setCorpo(corpo);
+		chitmom.setImmagine(immagine);
+		chitmom.setLarghezza_scala(larghezza);
+		chitmom.setLunghezza_scala(lunghezza);
+		chitmom.setMarca(marca);
+		chitmom.setModello(modello);
+		chitmom.setPrezzo(prezzo);
+		chitmom.setTastiera(tastiera);
+		chitmom.setTipoAcustica(tipo);
+		acustchiServ.chitarraAcusticaSalvaAggiorna(chitmom);
+	}
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -69,7 +89,8 @@ public class MainRunner implements ApplicationRunner {
 		//CREA ELETTRICHE
 		
 //      creaElettriche();
-		creaClassiche();
+//		creaClassiche();
+		creaAcustiche();
 
 	}
 	
@@ -89,6 +110,15 @@ public class MainRunner implements ApplicationRunner {
 		creaTreQuarti();
 		creaSetteOttavi();
 		creaQuattroQuarti();
+	}
+	
+	public void creaAcustiche() {
+		creaDreadnought();
+		creaJumbo();
+		creaFolk();
+		creaOoooo();
+		creaRoundback();
+		creaDaViaggio();
 	}
 	
 	public void creaStratocasters(){
@@ -258,26 +288,60 @@ public class MainRunner implements ApplicationRunner {
 	}
 	
 	public void creaUnOttavo(){
-	//	creaChitarraClassica("CG 851 1/8", "Startone", "../../../assets/immagini_prodotti/chitarre_classiche/1-8/CG 851 1-8 ricerca.jpg", "tiglio", "acero", "39mm", "465mm", "nylon", "marrone chiaro satinato", 38, ChitarreClassiche.UNOTTAVO);
+	    creaChitarraClassica("CG 851 1/8", "Startone", "../../../assets/immagini_prodotti/chitarre_classiche/1-8/CG 851 1-8 ricerca.jpg", "tiglio", "acero", "39mm", "465mm", "nylon", "marrone chiaro satinato", 38, ChitarreClassiche.UNOTTAVO);
+		creaChitarraClassica("GL1 Tobacco Brown Sunburst", "Yamaha", "../../../assets/immagini_prodotti/chitarre_classiche/1-8/GL1 Tobacco Brown Sunburst ricerca.jpg", "meranti", "sonokeling", "47,5mm", "433mm", "nylon", "sunburst marrone tabacco", 98, ChitarreClassiche.UNOTTAVO);
 	}
 	
 	public void creaUnQuarto() {
-		
+		creaChitarraClassica("Student Natural 1/4", "Gewa", "../../../assets/immagini_prodotti/chitarre_classiche/1-4/Student Natural 1-4 ricerca.jpg", "okume", "blackwood tek", "43mm", "450mm", "nylon", "naturale lucido", 137, ChitarreClassiche.UNQUARTO);
+		creaChitarraClassica("R121-1/4 NT", "Ortega", "../../../assets/immagini_prodotti/chitarre_classiche/1-4/R121-1-4 NT ricerca.jpg", "mogano", "noce", "43,5mm", "438mm", "nylon", "naturale", 178, ChitarreClassiche.UNQUARTO);
 	}
 	
 	public void creaUnMezzo() {
-		
+		creaChitarraClassica("Granito 33-N-MB-1/2", "La Mancha", "../../../assets/immagini_prodotti/chitarre_classiche/1-2/Granito 33-N-MB-1-2 ricerca.jpg", "mogano", "ovangkol", "46mm", "530mm", "nylon", "esplosione mogano", 151, ChitarreClassiche.UNMEZZO);
+		creaChitarraClassica("CG-851 1/2 Red", "Startone", "../../../assets/immagini_prodotti/chitarre_classiche/1-2/CG-851 1-2 Red ricerca.jpg", "basswood", "acero", "45mm", "550mm", "nylon", "rosso satinato", 40, ChitarreClassiche.UNMEZZO);
 	}
 	
 	public void creaTreQuarti() {
-		
+		creaChitarraClassica("Classic Guitar 3/4 Black", "Thomann", "../../../assets/immagini_prodotti/chitarre_classiche/3-4/Classic Guitar 3-4 Black ricerca.jpg", "abete", "acero", "47mm", "550mm", "nylon", "nero lucido", 129, ChitarreClassiche.TREQUARTI);
+		creaChitarraClassica("ESC80 Educational 3/4 NT", "Fender", "../../../assets/immagini_prodotti/chitarre_classiche/3-4/ESC80 Educational 3-4 NT ricerca.jpg", "abete", "noce", "44,5mm", "590mm", "nylon", "vintage, tinte naturali, satinato", 122, ChitarreClassiche.TREQUARTI);
 	}
 	
 	public void creaSetteOttavi() {
-		
+		creaChitarraClassica("HM65-Z-S Senorita", "Höfner", "../../../assets/immagini_prodotti/chitarre_classiche/7-8/HM65-Z-S Senorita ricerca.jpg", "mogano", "palissandro", "50mm", "630mm", "nylon", "naturale opaco", 888, ChitarreClassiche.SETTEOTTAVI);
+		creaChitarraClassica("Pro Natura Silver 7/8 Maple", "Gewa", "../../../assets/immagini_prodotti/chitarre_classiche/7-8/Pro Natura Silver 7-8 Maple ricerca.jpg", "acero", "acacia", "48mm", "620mm", "nylon", "seta opaca", 159, ChitarreClassiche.SETTEOTTAVI);
 	}
 	
 	public void creaQuattroQuarti() {
+		creaChitarraClassica("CG200CE-BK", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_classiche/4-4/CG200CE-BK ricerca.jpg", "tiglio", "acero", "52mm", "650mm", "nylon", "nero lucido", 69, ChitarreClassiche.QUATTROQUARTI);
+		creaChitarraClassica("Fusion Orchestra CE Cedar", "Cordoba", "../../../assets/immagini_prodotti/chitarre_classiche/4-4/Fusion Orchestra CE Cedar ricerca.jpg", "cedro", "mogano", "48mm", "650mm", "nylon", "naturale lucido", 809, ChitarreClassiche.QUATTROQUARTI);
+	}
+	
+	public void creaDreadnought() {
+//		creaChitarraAcustica("Custom Line CLD-41SE WN", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_acustiche/dreadnought/Custom Line CLD-41SE WN ricerca.jpg", "noce", "pau ferro", "43mm", "643mm", "opaco naturale", 375, ChitarreAcustiche.DREADNOUGHT);
 		
+//		creaChitarraAcustica("MR500E Open Pore Brown", "Cort", "../../../assets/immagini_prodotti/chitarre_acustiche/dreadnought/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.DREADNOUGHT);
+	}
+	
+	public void creaJumbo() {
+//		creaChitarraAcustica("MR500E Open Pore Brown", "Gretsch", "../../../assets/immagini_prodotti/chitarre_acustiche/jumbo/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.JUMBO);
+		
+//		creaChitarraAcustica("MR500E Open Pore Brown", "Cort", "../../../assets/immagini_prodotti/chitarre_acustiche/jumbo/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.JUMBO);
+	}
+
+	public void creaFolk() {
+	
+	}
+	
+	public void creaOoooo() {
+		
+	}
+
+	public void creaRoundback() {
+	
+	}
+
+	public void creaDaViaggio() {
+	
 	}
 }

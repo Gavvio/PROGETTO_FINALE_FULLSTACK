@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { ArticlesService } from '../components/articles/articles.service';
+import { SharedService } from '../navbar/shared.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ import { ArticlesService } from '../components/articles/articles.service';
 })
 export class HomeComponent implements OnInit{
 
-  constructor(private http:HttpClient,private as: AuthService,private ars:ArticlesService){
+  constructor(private http:HttpClient,private as: AuthService,private ars:ArticlesService,private ss:SharedService){
 
   }
   ngOnInit(){
@@ -20,7 +22,13 @@ export class HomeComponent implements OnInit{
     console.log(new Date());
 
 
+
+
+
   }
 
+  public test(){
+    this.ss.sendChiamata();
+  }
 
 }

@@ -9,11 +9,13 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { TerzaSceltaComponent } from './components/terza-scelta/terza-scelta.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { DetailsComponent } from './components/details/details.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 { path: '', component: HomeComponent },
 { path: 'favourites', component: FavouritesComponent },
 { path: 'articolo/:id', component: DetailsComponent },
+{ path: 'cart', component: CartComponent },
 //categorie principali
 { path: 'chitarre', component: PrimaSceltaComponent },
 { path: 'bassi', component: PrimaSceltaComponent },

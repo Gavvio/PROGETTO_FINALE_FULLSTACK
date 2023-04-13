@@ -19,12 +19,12 @@
       </nav>
     </div>
     <h1 class="text-center">STRATOCASTERS</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -44,10 +44,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -91,12 +98,12 @@
       </nav>
     </div>
     <h1 class="text-center">TELECASTERS</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5  pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -116,10 +123,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -162,12 +176,12 @@
       </nav>
     </div>
     <h1 class="text-center">SINGLE CUT</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -187,10 +201,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -234,12 +255,12 @@
       </nav>
     </div>
     <h1 class="text-center">DOUBLE CUT</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -259,10 +280,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -306,12 +334,12 @@
       </nav>
     </div>
     <h1 class="text-center">SEMI ACUSTICHE</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -331,10 +359,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -377,12 +412,12 @@
       </nav>
     </div>
     <h1 class="text-center">HEAVY</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -402,10 +437,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -448,12 +490,12 @@
       </nav>
     </div>
     <h1 class="text-center">CHITARRE CLASSICHE 1/8</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5  pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -473,10 +515,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -519,12 +568,12 @@
       </nav>
     </div>
     <h1 class="text-center">CHITARRE CLASSICHE 1/4</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -544,10 +593,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -590,12 +646,12 @@
       </nav>
     </div>
     <h1 class="text-center">CHITARRE CLASSICHE 1/2</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5  pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -615,10 +671,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -661,12 +724,12 @@
       </nav>
     </div>
     <h1 class="text-center">CHITARRE CLASSICHE 3/4</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -686,10 +749,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -732,12 +802,12 @@
       </nav>
     </div>
     <h1 class="text-center">CHITARRE CLASSICHE 7/8</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -757,10 +827,17 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>
@@ -803,12 +880,12 @@
       </nav>
     </div>
     <h1 class="text-center">CHITARRE CLASSICHE 4/4</h1>
-    <div class="mx-5  pb-4">
+    <div class="mx-2 mx-md-5 pb-4">
 
 
       <div class="row d-flex justify-content-center">
 
-        <div class="my-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
           *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
           <img src="{{elem.immagine}}" class="card-img-start" alt="...">
           <div class="card-body row">
@@ -828,10 +905,407 @@
 
                   </div>
                   <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3" class="bi bi-heart-fill"
-                      viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Corde: {{elem.corde}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="path=='dreadnought'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_acustiche">Chitarre Acustiche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Dreadnought</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">DREADNOUGHT</h1>
+    <div class="mx-2 mx-md-5 pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Corde: {{elem.corde}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="path=='jumbo'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_acustiche">Chitarre Acustiche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Jumbo</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">JUMBO</h1>
+    <div class="mx-2 mx-md-5 pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Corde: {{elem.corde}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="path=='folk'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_acustiche">Chitarre Acustiche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Folk</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">FOLK</h1>
+    <div class="mx-2 mx-md-5 pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Corde: {{elem.corde}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="path=='OOOOO'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_acustiche">Chitarre Acustiche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">O-OO-OOO</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">O-OO-OOO</h1>
+    <div class="mx-2 mx-md-5 pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-text col-12 d-md-flex flex-column d-none">
+              <p>
+                Corpo: {{elem.corpo}}
+              </p>
+              <p>
+                Corde: {{elem.corde}}
+              </p>
+              <p>
+                Tastiera: {{elem.tastiera}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="path=='roundback'">
+    <div class="container d-flex justify-content-center ">
+      <nav aria-label="breadcrumb d-flex align-items-center">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item puntatore_link">
+            <div routerLink="/">Home</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre">Chitarre</div>
+          </li>
+          <li class="breadcrumb-item puntatore_link">
+            <div class="d-flex" routerLink="/chitarre/chitarre_acustiche">Chitarre Acustiche</div>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Roundback</li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="text-center">ROUNDBACK</h1>
+    <div class="mx-2 mx-md-5 pb-4">
+
+
+      <div class="row d-flex justify-content-center">
+
+        <div class="my-0 my-md-2 py-3 card col-12 col-lg-7 d-flex flex-row carta align-items-center"
+          *ngFor="let elem of chitarre" (click)="dettaglio(elem.id)">
+          <img src="{{elem.immagine}}" class="card-img-start" alt="...">
+          <div class="card-body row">
+            <h5 class="card-title col-12 col-md-9 col-lg-6">
+              <div class="d-none d-sm-block">{{elem.marca}}</div> {{elem.modello}}
+            </h5>
+            <div class="card-text col-12 col-md-3 col-lg-6 d-flex justify-content-end">
+              <div>
+                €{{elem.prezzo}}
+                <div *ngIf="loggato==true">
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+
+                  </div>
+                  <div (click)="controllo(elem)" *ngIf="coloreCuore(elem.id)==true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7e00f3"
+                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                  </div>
+                  <div (click)="aggiungiCarrello(elem)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-cart" viewBox="0 0 16 16">
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                   </div>
                 </div>

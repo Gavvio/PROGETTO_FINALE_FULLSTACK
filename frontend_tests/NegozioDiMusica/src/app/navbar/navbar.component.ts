@@ -3,6 +3,9 @@ import { AuthService } from '../auth/auth.service';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ArticlesService } from '../components/articles/articles.service';
 import { ArticoloPayload } from '../utils/interfacce';
+import { CartService } from '../components/cart/cart.service';
+import { Subscription } from 'rxjs';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +22,9 @@ export class NavbarComponent implements OnInit {
   loggato: boolean = false;
   tutti: ArticoloPayload[] = [];
   selezionati: ArticoloPayload[] = [];
-  constructor(private as: AuthService, private router: Router, private ars: ArticlesService) {
+  carrello:ArticoloPayload[]=[];
+  aggiornoChiamata!:Subscription;
+  constructor(private as: AuthService, private router: Router, private ars: ArticlesService,private cs:CartService,private ss: SharedService) {
     this.router.events.subscribe((event)=>{
       if(event instanceof NavigationStart){
         console.log("ok");
@@ -29,6 +34,9 @@ export class NavbarComponent implements OnInit {
         console.log("circa ok")
       }
     });
+    this.aggiornoChiamata=this.ss.getChiamata().subscribe(()=>{
+      this.aggiornaCarrello();
+    })
    }
 
 
@@ -50,6 +58,7 @@ export class NavbarComponent implements OnInit {
         this.saluto = "Buonanotte";
       }
       this.name = this.as.nomeUtente;
+      this.aggiornaCarrello();
     }
     this.loggato = this.as.isLoggedIn;
     this.ars.loadAllArticolo().subscribe(
@@ -64,6 +73,12 @@ export class NavbarComponent implements OnInit {
     this.closebutton=<HTMLButtonElement>document.querySelector("#closebutton");
     this.closebuttoncanvas=<HTMLButtonElement>document.querySelector("#chiudiOffCanvas")
     this.input=<HTMLInputElement>document.querySelector("#input_vero");
+  }
+
+  public aggiornaCarrello(){
+    this.cs.getCarrello().subscribe(data=>{
+      this.carrello=data;
+    })
   }
 
   public ricerca(event:any){

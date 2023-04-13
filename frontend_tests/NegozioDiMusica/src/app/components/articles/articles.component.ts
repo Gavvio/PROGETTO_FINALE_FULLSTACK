@@ -5,6 +5,9 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { ChitarraElettrica, ArticoloPayload, ChitarraClassica } from 'src/app/utils/interfacce';
 import { ArticlesService } from './articles.service';
 import { FavouritesService } from '../favourites/favourites.service';
+import { CartService } from '../cart/cart.service';
+import { NavbarComponent } from 'src/app/navbar/navbar.component';
+import { SharedService } from 'src/app/navbar/shared.service';
 
 @Component({
   selector: 'app-articles',
@@ -19,8 +22,7 @@ export class ArticlesComponent implements OnInit {
   preferiti: ArticoloPayload[] = [];
   loggato:boolean=false;
   blocco:boolean=true;
-
-  constructor(private http: HttpClient, private as: AuthService, private router: Router, private ars: ArticlesService, private fs: FavouritesService) {
+  constructor(private http: HttpClient, private as: AuthService, private router: Router, private ars: ArticlesService, private fs: FavouritesService, private cs:CartService,private ss:SharedService) {
 
   }
 
@@ -106,6 +108,42 @@ export class ArticlesComponent implements OnInit {
         console.log(this.chitarre)
         this.path = "4-4";
       })
+    } else if(this.router.url=="/chitarre/chitarre_acustiche/dreadnought"){
+      this.ars.loadChitarreAcusticheDreadnought().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "dreadnought";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_acustiche/jumbo"){
+      this.ars.loadChitarreAcusticheJumbo().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "jumbo";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_acustiche/folk"){
+      this.ars.loadChitarreAcusticheFolk().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "folk";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_acustiche/O-OO-OOO"){
+      this.ars.loadChitarreAcusticheOoooo().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "OOOOO";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_da_viaggio"){
+      this.ars.loadChitarreAcusticheDaViaggio().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "daviaggio";
+      })
+    } else if(this.router.url=="/chitarre/chitarre_acustiche/roundback"){
+      this.ars.loadChitarreAcusticheRoundback().subscribe(data => {
+        this.chitarre = data;
+        console.log(this.chitarre)
+        this.path = "roundback";
+      })
     }
 
 
@@ -135,6 +173,19 @@ export class ArticlesComponent implements OnInit {
     )
   }
 
+  public aggiungiCarrello(c: ArticoloPayload) {
+    this.blocco=false;
+    this.cs.aggiungiArticoloCarrello(c.id).subscribe(
+      data => {
+        console.log(data);
+        console.log("articolo aggiunto correttamente al carrello")
+        this.ss.sendChiamata();
+      }, error => {
+        console.log("errore", error);
+      }
+    )
+  }
+
   public rimuoviPreferiti(c: ArticoloPayload) {
     this.fs.rimuoviArticoloPreferiti(c.id).subscribe(
       data => {
@@ -146,6 +197,18 @@ export class ArticlesComponent implements OnInit {
       }
     )
   }
+
+ /* public rimuoviCarrello(c: ArticoloPayload) {
+    this.cs.aggiungiArticoloCarrello(c.id).subscribe(
+      data => {
+        console.log(data);
+        console.log("articolo aggiunto correttamente al carrello")
+        this.nav.aggiornaCarrello();
+      }, error => {
+        console.log("errore", error);
+      }
+    )
+  }*/
 
   public controllo(c: ArticoloPayload) {
     this.blocco=false;

@@ -16,6 +16,7 @@ import { TerzaSceltaComponent } from './components/terza-scelta/terza-scelta.com
 import { FooterComponent } from './components/footer/footer.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { DetailsComponent } from './components/details/details.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DetailsComponent } from './components/details/details.component';
     TerzaSceltaComponent,
     FooterComponent,
     FavouritesComponent,
-    DetailsComponent
+    DetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

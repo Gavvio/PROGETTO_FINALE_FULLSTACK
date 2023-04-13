@@ -45,3 +45,11 @@ h2,div:hover{
   cursor: pointer;
   transform: scale(1.05);
 }
+
+.margineSinistro{
+  margin-left: -30px;
+  &:hover{
+    cursor:pointer;
+  }
+}
+
