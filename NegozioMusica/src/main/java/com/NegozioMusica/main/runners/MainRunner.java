@@ -9,15 +9,20 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.NegozioMusica.auth.service.ChitarraAcusticaService;
 import com.NegozioMusica.main.entities.ChitarraAcustica;
 import com.NegozioMusica.main.entities.ChitarraClassica;
 import com.NegozioMusica.main.entities.ChitarraElettrica;
+import com.NegozioMusica.main.entities.Corda;
+import com.NegozioMusica.main.repositories.CordaRepository;
+import com.NegozioMusica.main.services.AmplificatoreService;
+import com.NegozioMusica.main.services.ChitarraAcusticaService;
 import com.NegozioMusica.main.services.ChitarraClassicaService;
 import com.NegozioMusica.main.services.ChitarraElettricaService;
+import com.NegozioMusica.main.services.CordaService;
 import com.NegozioMusica.main.utils.ChitarreAcustiche;
 import com.NegozioMusica.main.utils.ChitarreClassiche;
 import com.NegozioMusica.main.utils.ChitarreElettriche;
+import com.NegozioMusica.main.utils.TipoCorde;
 
 
 @Component
@@ -28,6 +33,10 @@ public class MainRunner implements ApplicationRunner {
 	ChitarraClassicaService classchitServ;
 	@Autowired
 	ChitarraAcusticaService acustchiServ;
+	@Autowired
+	CordaService cordaServ;
+	@Autowired 
+	AmplificatoreService ampServ;
 
 	void creaChitarraElettrica(String colore, String controlli, String corpo, String inlay, String larghezza,
 			String lunghezza, String manico, String pickup, int tasti, String tastiera, double prezzo, String modello,
@@ -81,6 +90,22 @@ public class MainRunner implements ApplicationRunner {
 		chitmom.setTipoAcustica(tipo);
 		acustchiServ.chitarraAcusticaSalvaAggiorna(chitmom);
 	}
+	
+	public void creaCorda(String modello,String marca,String gauge,String materiale,double prezzo,String immagine,TipoCorde tipoCorde) {
+		Corda mom=new Corda();
+		mom.setGauge(gauge);
+		mom.setMarca(marca);
+		mom.setMateriale(materiale);
+		mom.setModello(modello);
+		mom.setPrezzo(prezzo);
+		mom.setTipoCorde(tipoCorde);
+		mom.setImmagine(immagine);
+		cordaServ.cordaSalvaAggiorna(mom);
+	}
+	
+	public void creaAmplificatore() {
+		
+	}
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -90,7 +115,8 @@ public class MainRunner implements ApplicationRunner {
 		
 //      creaElettriche();
 //		creaClassiche();
-		creaAcustiche();
+//		creaAcustiche();
+		creaCorde();
 
 	}
 	
@@ -121,6 +147,26 @@ public class MainRunner implements ApplicationRunner {
 		creaDaViaggio();
 	}
 	
+	public void creaCorde() {
+//		crea08();
+//		crea09();
+//		crea10();
+//		crea11();
+//		creaStandard();
+//		creaCarbonio();
+//		crea10Acustica();
+//		crea11Acustica();
+//		crea12();
+//		crea13();
+//		creaSteel();
+//		creaAcustici();
+//		crea40();
+//		crea45();
+//		crea50();
+//		crea40cinque();
+//		crea45cinque();
+	}
+
 	public void creaStratocasters(){
 		
 		// 10 STRATOCASTERS
@@ -318,30 +364,141 @@ public class MainRunner implements ApplicationRunner {
 	}
 	
 	public void creaDreadnought() {
-//		creaChitarraAcustica("Custom Line CLD-41SE WN", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_acustiche/dreadnought/Custom Line CLD-41SE WN ricerca.jpg", "noce", "pau ferro", "43mm", "643mm", "opaco naturale", 375, ChitarreAcustiche.DREADNOUGHT);
+		creaChitarraAcustica("Custom Line CLD-41SE WN", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_acustiche/dreadnought/Custom Line CLD-41SE WN ricerca.jpg", "noce", "pau ferro", "43mm", "643mm", "opaco naturale", 375, ChitarreAcustiche.DREADNOUGHT);
 		
-//		creaChitarraAcustica("MR500E Open Pore Brown", "Cort", "../../../assets/immagini_prodotti/chitarre_acustiche/dreadnought/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.DREADNOUGHT);
+		creaChitarraAcustica("MR500E Open Pore Brown", "Cort", "../../../assets/immagini_prodotti/chitarre_acustiche/dreadnought/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.DREADNOUGHT);
 	}
 	
 	public void creaJumbo() {
-//		creaChitarraAcustica("MR500E Open Pore Brown", "Gretsch", "../../../assets/immagini_prodotti/chitarre_acustiche/jumbo/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.JUMBO);
+		creaChitarraAcustica("G5022CWFE Falcon Rancher", "Gretsch", "../../../assets/immagini_prodotti/chitarre_acustiche/jumbo/G5022CWFE Falcon Rancher ricerca.jpg", "mogano", "palissandro", "43mm", "635mm", "bianco, dettagli oro scintillante", 645, ChitarreAcustiche.JUMBO);
 		
-//		creaChitarraAcustica("MR500E Open Pore Brown", "Cort", "../../../assets/immagini_prodotti/chitarre_acustiche/jumbo/MR500E Open Pore Brown ricerca.jpg", "mogano", "ovangkol", "43mm", "643mm", "opaco naturale", 299, ChitarreAcustiche.JUMBO);
+		creaChitarraAcustica("G-200 EC Natural Generation", "Gibson", "../../../assets/immagini_prodotti/chitarre_acustiche/jumbo/G-200 EC Natural Generation ricerca.jpg", "noce", "ebano", "43,80mm", "648mm", "naturale", 1699, ChitarreAcustiche.JUMBO);
 	}
 
 	public void creaFolk() {
-	
+		creaChitarraAcustica("G9500 Jim Dandy Flat Top", "Gretsch", "../../../assets/immagini_prodotti/chitarre_acustiche/folk/G9500 Jim Dandy Flat Top ricerca.jpg", "basswood", "noce", "42,9mm", "610mm", "esplosione di sole bicolore", 188, ChitarreAcustiche.FOLK);
+
+		creaChitarraAcustica("CC-60SCE Nat WN", "Fender", "../../../assets/immagini_prodotti/chitarre_acustiche/folk/CC-60SCE Nat WN ricerca.jpg", "mogano", "noce", "43mm", "643mm", "naturale", 266, ChitarreAcustiche.FOLK);
 	}
 	
 	public void creaOoooo() {
-		
+		creaChitarraAcustica("000-28 Brooke Ligertwood LH", "Martin Guitars", "../../../assets/immagini_prodotti/chitarre_acustiche/O-OO-OOO/000-28 Brooke Ligertwood ricerca.jpg", "abete", "ebano", "42,9mm", "645mm", "toner antico", 4555, ChitarreAcustiche.OOOOOO);
+
+		creaChitarraAcustica("CLP-12SM BRS Solid Top", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_acustiche/O-OO-OOO/CLP-12SM BRS Solid Top ricerca.jpg", "mogano", "cuore viola", "43mm", "628mm", "esplosione marone, lucido", 299, ChitarreAcustiche.OOOOOO);
 	}
 
 	public void creaRoundback() {
-	
+		creaChitarraAcustica("HBO-850 Classic Blue", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_acustiche/roundback/HBO-850 Classic Blue ricerca.jpg", "abete", "roseacer", "43mm", "650mm", "blulucido", 129, ChitarreAcustiche.ROUNDBACK);
+
+		creaChitarraAcustica("Celebrity Elite CE44-ABLKW-G", "Ovation", "../../../assets/immagini_prodotti/chitarre_acustiche/roundback/Celebrity Elite CE44-ABLKW-G ricerca.jpg", "blackwood", "ovangkol", "42,8mm", "643mm", "esplosione nera", 598, ChitarreAcustiche.ROUNDBACK);
 	}
 
 	public void creaDaViaggio() {
-	
+		creaChitarraAcustica("GS-Travel-E Spruce", "Harley Benton", "../../../assets/immagini_prodotti/chitarre_da_viaggio/GS-Travel-E Spruce ricerca.jpg", "abete rosso", "blackwood", "43mm", "596mm", "naturale lucido", 139, ChitarreAcustiche.DAVIAGGIO);
+		
+		creaChitarraAcustica("Swift Baby Taylor TS-BT", "Taylor", "../../../assets/immagini_prodotti/chitarre_da_viaggio/Swift Baby Taylor TS-BT ricerca.jpg", "abete", "ebano", "42,8mm", "578mm", "naturale, rosetta personalizzata", 379, ChitarreAcustiche.DAVIAGGIO);
 	}
+	
+	public void crea08() {
+		creaCorda("2225", "Ernie Ball", "008-011-014-022-030-038","acciaio nichelato", 6.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/008/2225 ricerca.jpg",TipoCorde.OTTO);
+	
+		creaCorda("EXL130", "Daddario", "008-011-014-022-030-038","acciaio nichelato", 7.40, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/008/EXL130 ricerca.jpg",TipoCorde.OTTO);
+	}
+	
+	public void crea09() {
+		creaCorda("2223", "Ernie Ball", "009-011-016-024-032-042","acciaio nichelato", 5.80, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/009/2223 ricerca.jpg",TipoCorde.NOVE);
+	
+		creaCorda("2222", "Ernie Ball", "009-011-016-026-036-046","acciaio nichelato", 5.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/009/2222 ricerca.jpg",TipoCorde.NOVE);	
+	}
+	
+	public void crea10() {
+		creaCorda("2221", "Ernie Ball", "010-013-017-026-036-046","acciaio nichelato", 5.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/010/2221 ricerca.jpg",TipoCorde.DIECI);
+	
+		creaCorda("2215", "Ernie Ball", "010-013-017-030-042-052","acciaio nichelato", 5.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/010/2215 ricerca.jpg",TipoCorde.DIECI);	
+	}	
+	
+	public void crea11() {
+		creaCorda("2220", "Ernie Ball", " 011-014-018-028-038-048","acciaio nichelato", 5.70, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/011/2220 ricerca.jpg",TipoCorde.UNDICI);
+	
+		creaCorda("2226", "Ernie Ball", "011-014-018-030-042-052","acciaio nichelato", 6.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_elettrica/011/2226 ricerca.jpg",TipoCorde.UNDICI);	
+	}	
+	
+	public void creaStandard(){
+		creaCorda("Valuestrings CL Normal", "Harley Benton", "normal","E,A,D argentate e avvolte, G,B,E nylon", 2.55, "../../../assets/immagini_prodotti/corde/corde_chitarra_classica/standard/Valuestrings CL Normal ricerca.jpg",TipoCorde.STANDARD);
+		
+		creaCorda("EJ45","Daddario", "028-032-040-029-035-043","rame argentato", 12.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_classica/standard/EJ45 ricerca.jpg",TipoCorde.STANDARD);	
+	}
+	
+	public void creaCarbonio() {
+		creaCorda("EJ45FF", "Daddario", "normal","carbonio", 16.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_classica/carbonio/EJ45FF ricerca.jpg",TipoCorde.CARBONIO);
+		
+		creaCorda("Strings Erithacus line EDC34.0 MHT", "Knobloch", "medium","corde alte carbonio, corde basse argento", 20.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_classica/carbonio/Strings Erithacus line EDC34.0 MHT ricerca.jpg",TipoCorde.CARBONIO);	
+	}
+	
+	public void crea10Acustica() {
+		creaCorda("MA-170 Authentic Acoustic Set", "Martin Guitars", "010-014-023-030-039-047","bronzo", 7.10, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/010/MA-170 Authentic Acoustic Set ricerca.jpg",TipoCorde.DIECIACUSTICHE);
+		
+		creaCorda("2008 Earthwood Bronze", "Ernie Ball", "010-013-017-030-042-052","bronzo", 7.40, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/010/2008 Earthwood Bronze ricerca.jpg",TipoCorde.DIECIACUSTICHE);		
+	}
+	
+	public void crea11Acustica() {
+		creaCorda("MA535T Authentic Treated", "Martin Guitars", "011-015-023-032-042-052","bronzo fosforoso", 14.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/011/MA535T Authentic Treated ricerca.jpg",TipoCorde.UNDICIACUSTICHE);
+		
+		creaCorda("HQS WE 11-52 PB", "Harley Benton", "011-015-022-032-042-052","bronzo fosforoso", 3.98, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/011/HQS WE 11-52 PB ricerca.jpg",TipoCorde.UNDICIACUSTICHE);	
+	}
+
+	public void crea12() {
+		creaCorda("EJ16", "Daddario", "012-016-024-032-042-053","bronzo fosforoso", 11.40, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/012/EJ16 ricerca.jpg",TipoCorde.DODICI);
+		
+		creaCorda("Nanoweb Light-Medium Acoustic", "Elixir", "012-016-025-035-045-056","bronzo", 16.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/012/Nanoweb Light-Medium Acoustic ricerca.jpg",TipoCorde.DODICI);	
+	}
+	
+	public void crea13() {
+		creaCorda("MTR13 Tony Rice Sig.Strings", "Martin Guitars", "013-016-026-034-044-056","monel", 9.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/013/MTR13 Tony Rice Sig.Strings ricerca.jpg",TipoCorde.TREDICI);
+		
+		creaCorda("MEC-13", "Martin Guitars", "013-017-026-035-045-056","bronzo fosforoso", 6.80, "../../../assets/immagini_prodotti/corde/corde_chitarra_acustica/013/MEC-13 ricerca.jpg",TipoCorde.TREDICI);	
+	}
+	
+	public void creaSteel() {
+		creaCorda("PF500 E9", "GHS", "012-015-011-014-017-020-026-030-034-036","nichel", 12.40, "../../../assets/immagini_prodotti/corde/corde_chitarra_steel/PF500 E9 ricerca.jpg",TipoCorde.STEEL);
+		
+		creaCorda("Svenson´s Resophonic StringSet", "Pyramid", "016-019-028-039-049-059","bronzo fosforoso", 17.90, "../../../assets/immagini_prodotti/corde/corde_chitarra_steel/Svenson´s Resophonic StringSet ricerca.jpg",TipoCorde.STEEL);	
+	}
+	
+	public void creaAcustici() {
+		creaCorda("8060 Acoustic Bass", "Fender", "045-065-080-100","bronzo fosforoso", 20.40, "../../../assets/immagini_prodotti/corde/corde_basso_acustico/8060 Acoustic Bass ricerca.jpg",TipoCorde.ACUSTICI);
+		
+		creaCorda("IABS4C32 AcBassString Set", "Ibanez", "040-060-075-095","bronzo", 21.60, "../../../assets/immagini_prodotti/corde/corde_basso_acustico/IABS4C32 AcBassString Set ricerca.jpg",TipoCorde.ACUSTICI);	
+	}
+	
+	public void crea40() {
+		creaCorda("2835 Extra Slinky", "Ernie Ball", "040-060-070-095","nichel", 22.90, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/040/2835 Extra Slinky ricerca.jpg",TipoCorde.QUARANTA);
+		
+		creaCorda("2841 Hyper Slinky Bass", "Ernie Ball", "040-060-080-100","acciaio nichelato", 22.30, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/040/2841 Hyper Slinky Bass ricerca.jpg",TipoCorde.QUARANTA);	
+	}
+	
+	public void crea45() {
+		creaCorda("RS66LD Swing Bass", "Rotosound", "045-065-080-105","acciaio inossidabile", 22.30, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/045/RS66LD Swing Bass ricerca.jpg",TipoCorde.QUARANTACINQUE);
+		
+		creaCorda("2733", "Ernie Ball", "045-065-085-105","cobalto", 33.00, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/045/2733 ricerca.jpg",TipoCorde.QUARANTACINQUE);	
+	}
+	
+	public void crea50() {
+		creaCorda("3045 H Boomers", "GHS", "050-070-095-115","acciaio nichelato", 30, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/050/3045 H Boomers ricerca.jpg",TipoCorde.CINQUANTA);
+		
+		creaCorda("HQS Bass 50-110", "Harley Benton", "050-070-085-110","acciaio inossidabile", 9.90, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/050/HQS Bass 50-110 ricerca.jpg",TipoCorde.CINQUANTA);	
+	}
+	
+	public void crea40cinque() {
+		creaCorda("Strings Dragon Skin DSB5-40", "DR", "040-060-080-100-120","acciaio inossidabile", 49, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/040_5_corde/Strings Dragon Skin DSB5-40 ricerca.jpg",TipoCorde.QUARANTACINQUECORDE);
+		
+		creaCorda("Strings Pure Blues PB5-40", "DR", "040-060-080-100-120","quantum nichel", 50, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/040_5_corde/Strings Pure Blues PB5-40 ricerca.jpg",TipoCorde.QUARANTACINQUECORDE);	
+	}
+	
+	public void crea45cinque() {
+		creaCorda("Valuestrings Bass-5 45-130", "Harley Benton", "045-065-085-105-130","acciaio nichelato", 8.90, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/045_5_corde/Valuestrings Bass-5 45-130 ricerca.jpg",TipoCorde.QUARANTACINQUECINQUECORDE);
+		
+		creaCorda("EXL170-5", "Daddario", "045-065-085-105-130","nichel", 38, "../../../assets/immagini_prodotti/corde/corde_basso_elettrico/045_5_corde/EXL170-5 ricerca.jpg",TipoCorde.QUARANTACINQUECINQUECORDE);	
+	}
+	
 }

@@ -23,13 +23,16 @@ import com.NegozioMusica.main.entities.Articolo;
 import com.NegozioMusica.main.entities.ChitarraAcustica;
 import com.NegozioMusica.main.entities.ChitarraClassica;
 import com.NegozioMusica.main.entities.ChitarraElettrica;
+import com.NegozioMusica.main.entities.Corda;
 import com.NegozioMusica.main.repositories.ArticoloRepository;
 import com.NegozioMusica.main.repositories.ChitarraAcusticaRepository;
 import com.NegozioMusica.main.repositories.ChitarraClassicaRepository;
 import com.NegozioMusica.main.repositories.ChitarraElettricaRepository;
+import com.NegozioMusica.main.repositories.CordaRepository;
 import com.NegozioMusica.main.utils.ChitarreAcustiche;
 import com.NegozioMusica.main.utils.ChitarreClassiche;
 import com.NegozioMusica.main.utils.ChitarreElettriche;
+import com.NegozioMusica.main.utils.TipoCorde;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -44,6 +47,8 @@ public class ArticoloController {
 	ChitarraClassicaRepository classicaRepo;
 	@Autowired
 	ChitarraAcusticaRepository acusticaRepo;
+	@Autowired
+	CordaRepository cordaRepo;
 	@Autowired
 	JwtTokenProvider jwtProv;
 	@Autowired
@@ -149,6 +154,91 @@ public class ArticoloController {
 		return new ResponseEntity<List<ChitarraAcustica>>(acusticaRepo.findByTipoAcustica(ChitarreAcustiche.DAVIAGGIO),HttpStatus.OK);
 	}
 	
+	@GetMapping("/corde/08")
+	public ResponseEntity<List<Corda>> ottieniTutte08(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.OTTO),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/09")
+	public ResponseEntity<List<Corda>> ottieniTutte09(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.NOVE),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/10")
+	public ResponseEntity<List<Corda>> ottieniTutte10(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.DIECI),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/11")
+	public ResponseEntity<List<Corda>> ottieniTutte11(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.UNDICI),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/10acustiche")
+	public ResponseEntity<List<Corda>> ottieniTutte10acustiche(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.DIECIACUSTICHE),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/11acustiche")
+	public ResponseEntity<List<Corda>> ottieniTutte11acustiche(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.UNDICIACUSTICHE),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/12")
+	public ResponseEntity<List<Corda>> ottieniTutte12(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.DODICI),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/13")
+	public ResponseEntity<List<Corda>> ottieniTutte13(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.TREDICI),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/standard")
+	public ResponseEntity<List<Corda>> ottieniTutteStandard(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.STANDARD),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/carbonio")
+	public ResponseEntity<List<Corda>> ottieniTutteCarbonio(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.CARBONIO),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/steel")
+	public ResponseEntity<List<Corda>> ottieniTutteSteel(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.STEEL),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/40")
+	public ResponseEntity<List<Corda>> ottieniTutte40(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.QUARANTA),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/45")
+	public ResponseEntity<List<Corda>> ottieniTutte45(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.QUARANTACINQUE),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/50")
+	public ResponseEntity<List<Corda>> ottieniTutte50(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.CINQUANTA),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/40cinque")
+	public ResponseEntity<List<Corda>> ottieniTutte40cinque(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.QUARANTACINQUECORDE),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/45cinque")
+	public ResponseEntity<List<Corda>> ottieniTutte45cinque(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.QUARANTACINQUECINQUECORDE),HttpStatus.OK);
+	}
+	
+	@GetMapping("/corde/acustici")
+	public ResponseEntity<List<Corda>> ottieniTutteAcustici(){
+		return new ResponseEntity<List<Corda>>(cordaRepo.findByTipoCorde(TipoCorde.ACUSTICI),HttpStatus.OK);
+	}
+	
 	@GetMapping("/preferiti")
 	public ResponseEntity<List<Articolo>> ottieniPreferitiUtente(@RequestHeader(name="Authorization",required = false) String jwt){
 		String mailTest=jwtProv.getEmailWithoutBearer(jwt);
@@ -228,11 +318,9 @@ public class ArticoloController {
 		}
 		if(controllo) {
 			Articolo articolo=articoli.get(mom);
-			System.out.println(articolo);
 			carrelloUser.add(articolo);
-			System.out.println(carrelloUser);
 			user.setCarrello(carrelloUser);
-			System.out.println(user);
+			System.out.println("articolo aggiunto al carrello");
 		}
 		
 		return new ResponseEntity<User>(userRepository.save(user), HttpStatus.OK);
@@ -262,14 +350,34 @@ public class ArticoloController {
 		String mailTest=jwtProv.getEmailWithoutBearer(jwt);
 		User user=userRepository.findByEmail(mailTest);
 		List<Articolo> articoliCarrello=user.getCarrello();
-		int mom=0;
+		System.out.println(id);
 		for(int i=0;i<articoliCarrello.size();i++) {
 			if(articoliCarrello.get(i).getId()==id) {
 				System.out.println("articolo trovato ed eliminato");
-				mom=i;
+				articoliCarrello.remove(i);
 			}
 		}
-		articoliCarrello.remove(mom);
+		System.out.println(articoliCarrello);
+		user.setCarrello(articoliCarrello);
+		return new ResponseEntity<User>(userRepository.save(user), HttpStatus.OK);
+		
+	}
+	
+	@DeleteMapping("/carrello/articoli/{ids}")
+	public ResponseEntity<User> updateUserDeleteArticoliCarrello(@PathVariable List<Long> ids,@RequestHeader(name="Authorization",required = false) String jwt) {
+		String mailTest=jwtProv.getEmailWithoutBearer(jwt);
+		User user=userRepository.findByEmail(mailTest);
+		List<Articolo> articoliCarrello=user.getCarrello();
+		System.out.println(ids);
+		for(int i=0;i<articoliCarrello.size();i++) {
+			for(int a=0;a<ids.size();a++) {
+				if(ids.get(a)==articoliCarrello.get(i).getId()) {
+					System.out.println("articolo trovato ed eliminato");
+					articoliCarrello.remove(i);
+				}
+			}
+		}
+		System.out.println(articoliCarrello);
 		user.setCarrello(articoliCarrello);
 		return new ResponseEntity<User>(userRepository.save(user), HttpStatus.OK);
 		

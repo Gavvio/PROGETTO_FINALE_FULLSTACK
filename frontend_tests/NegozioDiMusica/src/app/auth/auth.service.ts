@@ -52,7 +52,9 @@ export class AuthService {
     this.nomeUtente="";
     this.token="";
     console.log("utente sloggato correttamente")
-    window.location.reload();
+    this.router.navigate(["/"]).then(()=>{
+      window.location.reload();
+    });
   }
 
 }

@@ -20,10 +20,14 @@ export interface ArticoloPayload{
   controlli: string;
   prezzo: number;
   immagine: string;
-  tipoElettrica:string;
   tremolo:string;
   corde:string;
   tipoClassica:string;
+  tipoElettrica:string;
+  tipoAcustica:string;
+  tipoCorde:string;
+  materiale:string;
+  gauge:string;
 }
 
 export interface ChitarraElettrica {

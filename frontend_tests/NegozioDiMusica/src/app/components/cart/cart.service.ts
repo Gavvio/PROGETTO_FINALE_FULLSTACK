@@ -43,4 +43,18 @@ export class CartService {
 
   }
 
+  rimuoviArticoliCarrello(ids:number[]){
+
+    let mom:string=ids.toString();
+    console.log(mom);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.as.token}`
+    })
+
+    return this.http.delete<any>(this.url+`carrello/articoli/${mom}`,{headers:headers})
+
+  }
+
 }

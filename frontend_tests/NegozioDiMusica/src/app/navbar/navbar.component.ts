@@ -27,11 +27,9 @@ export class NavbarComponent implements OnInit {
   constructor(private as: AuthService, private router: Router, private ars: ArticlesService,private cs:CartService,private ss: SharedService) {
     this.router.events.subscribe((event)=>{
       if(event instanceof NavigationStart){
-        console.log("ok");
         this.chiudiModale();
       }
       else if(event instanceof NavigationEnd){
-        console.log("circa ok")
       }
     });
     this.aggiornoChiamata=this.ss.getChiamata().subscribe(()=>{
@@ -73,6 +71,7 @@ export class NavbarComponent implements OnInit {
     this.closebutton=<HTMLButtonElement>document.querySelector("#closebutton");
     this.closebuttoncanvas=<HTMLButtonElement>document.querySelector("#chiudiOffCanvas")
     this.input=<HTMLInputElement>document.querySelector("#input_vero");
+    console.log(this.loggato)
   }
 
   public aggiornaCarrello(){
@@ -99,7 +98,6 @@ export class NavbarComponent implements OnInit {
 
   public chiudiModale(){
     this.closebuttoncanvas.click();
-    console.log("ma che cazz")
   }
 
   public focus(){

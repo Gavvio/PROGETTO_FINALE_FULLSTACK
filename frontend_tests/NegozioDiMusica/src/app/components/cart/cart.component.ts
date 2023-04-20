@@ -3,6 +3,7 @@ import { ArticoloPayload } from 'src/app/utils/interfacce';
 import { CartService } from './cart.service';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/navbar/shared.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -27,6 +28,10 @@ export class CartComponent implements OnInit{
     });
   }
 
+  public eliminaSolo(id:number):Observable<any>{
+    return this.cs.rimuoviArticoloCarrello(id)
+  }
+
   public dettaglio(id:number){
     if(this.blocco==true){
       this.router.navigate([`/articolo/${id}`]);
@@ -45,10 +50,18 @@ export class CartComponent implements OnInit{
   }
 
   public acquisto(){
+    let ids:number[]=[];
     this.carrello.forEach(elem=>{
-      this.eliminaCarrello(elem.id);
+       ids.push(elem.id);
     });
-    this.router.navigate(["/"]);
+    this.cs.rimuoviArticoliCarrello(ids).subscribe(data=>{
+      console.log(data)
+      this.getCarrello();
+      this.ss.sendChiamata();
+      console.log("carrello svuotato")
+      this.router.navigate(["/"]);
+    });
+
   }
 
 

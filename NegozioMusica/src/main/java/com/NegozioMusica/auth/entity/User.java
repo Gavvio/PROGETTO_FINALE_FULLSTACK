@@ -34,10 +34,12 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
+    
     @ManyToMany(cascade={CascadeType.ALL})
     @JoinTable(name="PREFERITI", joinColumns=@JoinColumn(name="UTENTE_ID"),
     inverseJoinColumns=@JoinColumn(name="ARTICOLO_ID"))
     private List<Articolo> articoli;
+    
     @ManyToMany(cascade={CascadeType.ALL})
     @JoinTable(name="CARRELLO", joinColumns=@JoinColumn(name="UTENTE_ID"),
     inverseJoinColumns=@JoinColumn(name="ARTICOLO_ID"))

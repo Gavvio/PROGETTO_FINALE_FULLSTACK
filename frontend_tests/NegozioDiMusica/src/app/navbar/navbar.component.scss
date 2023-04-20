@@ -121,5 +121,10 @@ position: relative;
 position:absolute;
 top: -5px;
 right:-5px;
-background-color: #9425fc !important;
+//background-color: #9425fc !important;
+background: linear-gradient(45deg, #73e3ff,#ec69fe );
+}
+
+.modal-backdrop {
+  position:unset !important;
 }

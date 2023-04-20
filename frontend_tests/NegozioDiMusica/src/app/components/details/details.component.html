@@ -8,13 +8,21 @@
     </div>
     <div class="col-12 col-lg-4">
       <div>
-        <div class="prezzo d-flex justify-content-start align-items-center justify-content-lg-center">
+        <div class="prezzo d-flex justify-content-start align-items-center justify-content-lg-center" *ngIf="articolo.tipoCorde==null">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-currency-euro icona_euro" viewBox="0 0 16 16">
             <path
               d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z" />
           </svg>
           {{articolo.prezzo}}
+        </div>
+        <div class="prezzo d-flex justify-content-start align-items-center justify-content-lg-center" *ngIf="articolo.tipoCorde!=null">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-currency-euro icona_euro" viewBox="0 0 16 16">
+            <path
+              d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z" />
+          </svg>
+          {{articolo.prezzo}}0
         </div>
         <div class="d-flex flex-row justify-content-center">
           <div *ngIf="loggato==true">
@@ -60,6 +68,7 @@
           </ul>
         </div>
         <div *ngIf="articolo.tipoClassica!=null" class="mx-2 mx-3">
+          <h3>Chitarra Classica</h3>
           <ul class="list-group list-group-flush">
             <li *ngIf="articolo.tipoClassica=='UNOTTAVO'" class="list-group-item">Dimensione: 1/8</li>
             <li *ngIf="articolo.tipoClassica=='UNQUARTO'" class="list-group-item">Dimensione: 1/4</li>
@@ -72,6 +81,45 @@
             <li class="list-group-item">Tastiera: {{articolo.tastiera}}</li>
             <li class="list-group-item">Lunghezza scala: {{articolo.lunghezza_scala}}</li>
             <li class="list-group-item">Larghezza scala: {{articolo.larghezza_scala}}</li>
+          </ul>
+        </div>
+        <div *ngIf="articolo.tipoAcustica!=null && articolo.tipoAcustica!='DAVIAGGIO'" class="mx-2 mx-3">
+          <h3>Chitarra Acustica</h3>
+          <ul class="list-group list-group-flush">
+            <li *ngIf="articolo.tipoAcustica=='DREADNOUGHT'" class="list-group-item">Tipo: Dreadnought</li>
+            <li *ngIf="articolo.tipoAcustica=='JUMBO'" class="list-group-item">Tipo: Jumbo</li>
+            <li *ngIf="articolo.tipoAcustica=='FOLK'" class="list-group-item">Tipo: Folk</li>
+            <li *ngIf="articolo.tipoAcustica=='OOOOOO'" class="list-group-item">Tipo: O-OO-OOO</li>
+            <li *ngIf="articolo.tipoAcustica=='ROUNDBACK'" class="list-group-item">Tipo: Roundback</li>
+            <li class="list-group-item">Colore: {{articolo.colore}}</li>
+            <li class="list-group-item">Corpo: {{articolo.corpo}}</li>
+            <li class="list-group-item">Tastiera: {{articolo.tastiera}}</li>
+            <li class="list-group-item">Lunghezza scala: {{articolo.lunghezza_scala}}</li>
+            <li class="list-group-item">Larghezza scala: {{articolo.larghezza_scala}}</li>
+          </ul>
+        </div>
+        <div *ngIf="articolo.tipoAcustica!=null && articolo.tipoAcustica=='DAVIAGGIO'" class="mx-2 mx-3">
+          <h3>Chitarra Da Viaggio</h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Tipo: Da Viaggio</li>
+            <li class="list-group-item">Colore: {{articolo.colore}}</li>
+            <li class="list-group-item">Corpo: {{articolo.corpo}}</li>
+            <li class="list-group-item">Tastiera: {{articolo.tastiera}}</li>
+            <li class="list-group-item">Lunghezza scala: {{articolo.lunghezza_scala}}</li>
+            <li class="list-group-item">Larghezza scala: {{articolo.larghezza_scala}}</li>
+          </ul>
+        </div>
+        <div *ngIf="articolo.tipoCorde!=null">
+          <h3>Corde</h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngIf="articolo.tipoCorde=='OTTO' || articolo.tipoCorde=='NOVE' || articolo.tipoCorde=='DIECI' || articolo.tipoCorde=='UNDICI'">Tipo: Corde Chitarra Elettrica</li>
+            <li class="list-group-item" *ngIf="articolo.tipoCorde=='DODICI' || articolo.tipoCorde=='TREDICI' || articolo.tipoCorde=='DIECIACUSTICHE' || articolo.tipoCorde=='UNDICIACUSTICHE'">Tipo: Corde Chitarra Acustica</li>
+            <li class="list-group-item" *ngIf="articolo.tipoCorde=='STANDARD' || articolo.tipoCorde=='CARBONIO' ">Tipo: Corde Chitarra Classica</li>
+            <li class="list-group-item" *ngIf="articolo.tipoCorde=='STEEL'">Tipo: Corde Chitarra Steel</li>
+            <li class="list-group-item" *ngIf="articolo.tipoCorde=='QUARANTA' || articolo.tipoCorde=='QUARANTACINQUE' || articolo.tipoCorde=='CINQUANTA' || articolo.tipoCorde=='QUARANTACINQUECORDE' || articolo.tipoCorde=='QUARANTACINQUECINQUECORDE'">Tipo: Corde Basso Elettrico</li>
+            <li class="list-group-item" *ngIf="articolo.tipoCorde=='ACUSTICI'">Tipo: Corde Basso Acustico</li>
+            <li class="list-group-item">Materiale: {{articolo.materiale}}</li>
+            <li class="list-group-item">Gauge: {{articolo.gauge}}</li>
           </ul>
         </div>
       </div>

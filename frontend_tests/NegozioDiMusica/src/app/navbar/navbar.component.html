@@ -62,11 +62,12 @@
   </div>
 </nav> -->
 
-<nav class="navbar bg-body-tertiary sfondo_navbar">
+<nav class="navbar sticky-top pt-3 bg-body-tertiary sfondo_navbar">
   <div class="container d-flex justify-content-center">
     <div class="container-fluid row d-flex">
 
-      <div class="col-6 col-lg-12 d-flex align-items-center justify-content-center order-1">
+      <div *ngIf="loggato==true"
+        class="col-6 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start order-1 order-lg-1">
 
         <a class="nav-link mb-2" aria-current="page" routerLink="/" routerLinkActive="attivo"
           [routerLinkActiveOptions]="{exact:true}"><img
@@ -75,44 +76,38 @@
 
       </div>
 
-      <div class="col-4 col-lg-4 order-3 order-lg-1">
+      <div *ngIf="loggato==false" class="col-6 col-lg-12 d-flex align-items-center justify-content-center order-1">
+
+        <a class="nav-link mb-2" aria-current="page" routerLink="/" routerLinkActive="attivo"
+          [routerLinkActiveOptions]="{exact:true}"><img
+            src="../../../assets/gavioli-low-resolution-logo-color-on-transparent-background.png" alt="logo_gavioli"
+            id="logo_pagina"></a>
+
+      </div>
+
+      <div *ngIf="loggato==true" class="d-none col-lg-6 d-lg-block order-lg-2 justify-content-lg-end">
+        <h2 *ngIf="name!=''" class="text-end mt-2  fw-bold no_hover">Salve, {{name|titlecase}}</h2>
+      </div>
+
+      <div class="col-4 col-lg-4 order-3 order-lg-3">
         <button class="navbar-toggler border border-0" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
 
-      <div class="col-8 col-lg-4 order-4 order-lg-3 d-flex justify-content-center align-items-center">
+      <div class="col-8 col-lg-4 order-4 order-lg-4 d-flex justify-content-center align-items-center">
         <!-- Button trigger modal -->
-        <div class="container-fluid" (click)="focus()" >
+        <div class="container-fluid" (click)="focus()">
           <input type="search" class="search text-center" placeholder="Ricerca" data-bs-toggle="modal"
             data-bs-target="#exampleModal" disabled>
         </div>
 
 
-        <!-- Modal -->
-        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <input type="text" spellcheck="false" ngbAutoFocus (keyup)="ricerca($event)" id="input_vero"
-                  class="search_vera px-4 py-2" placeholder="Ricerca" autocomplete="off">
-                <button type="button" class="btn-close" id="closebutton" data-bs-dismiss="modal"
-                  aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul class="list-group list-group-flush">
-                  <li class="scelte list-group-item" (click)="dettaglio(scelta.id)" *ngFor="let scelta of selezionati">{{scelta.marca}}
-                    {{scelta.modello}}</li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-        </div>
+        <!--qui era-->
       </div>
 
-      <div class="col-6 col-lg-4 order-2 order-lg-4">
+      <div class="col-6 col-lg-4 order-2 order-lg-5">
         <li class="nav-item w-100 d-flex justify-content-lg-end justify-content-center">
           <a class="nav-link hover_viola me-lg-3 p-lg-1" routerLink="auth/login" routerLinkActive="">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
@@ -123,7 +118,8 @@
             </svg>
           </a>
 
-          <a class="nav-link hover_viola me-lg-3 ms-lg-3 p-lg-1" routerLink="favourites" routerLinkActive="" *ngIf="loggato==true">
+          <a class="nav-link hover_viola me-lg-3 ms-lg-3 p-lg-1" routerLink="favourites" routerLinkActive=""
+            *ngIf="loggato==true">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-heart"
               viewBox="0 0 16 16" id="icona_preferiti">
               <path
@@ -131,7 +127,8 @@
             </svg>
           </a>
 
-          <a class="nav-link hover_viola ms-lg-3 p-lg-1" routerLink="auth/login" *ngIf="loggato==false" routerLinkActive="">
+          <a class="nav-link hover_viola ms-lg-3 p-lg-1" routerLink="auth/login" *ngIf="loggato==false"
+            routerLinkActive="">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cart"
               viewBox="0 0 16 16">
               <path
@@ -139,13 +136,15 @@
             </svg>
           </a>
 
-          <a class="nav-link hover_viola ms-lg-3 p-lg-1 position-relative" *ngIf="loggato==true" routerLink="cart" routerLinkActive="">
+          <a class="nav-link hover_viola ms-lg-3 p-lg-1 position-relative" *ngIf="loggato==true" routerLink="cart"
+            routerLinkActive="">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cart"
               viewBox="0 0 16 16">
               <path
                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
             </svg>
-            <span class="text-center position-absolute top-0 badge rounded-pill" id="notifiche">{{carrello.length}}</span>
+            <span class="text-center position-absolute top-0 badge rounded-pill"
+              id="notifiche">{{carrello.length}}</span>
           </a>
         </li>
 
@@ -156,8 +155,10 @@
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
       <div class="offcanvas-header">
-        <h5 *ngIf="name!=''" class="offcanvas-title no_hover mx-auto" id="offcanvasNavbarLabel"> {{saluto}} {{name| titlecase}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" id="chiudiOffCanvas" aria-label="Close"></button>
+        <h5 *ngIf="name!=''" class="offcanvas-title no_hover mx-auto" id="offcanvasNavbarLabel"> {{saluto}} {{name|
+          titlecase}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" id="chiudiOffCanvas"
+          aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -188,3 +189,24 @@
     </div>
   </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <input type="text" spellcheck="false" ngbAutoFocus (keyup)="ricerca($event)" id="input_vero"
+          class="search_vera px-4 py-2" placeholder="Ricerca" autocomplete="off">
+        <button type="button" class="btn-close" id="closebutton" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group list-group-flush">
+          <li class="scelte list-group-item" (click)="dettaglio(scelta.id)" *ngFor="let scelta of selezionati">
+            {{scelta.marca}}
+            {{scelta.modello}}</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
