@@ -23,17 +23,12 @@ export class HomeComponent implements OnInit {
 
   }
   ngOnInit() {
-    console.log(this.as.isLoggedIn);
-    console.log(this.as.nomeUtente);
-    console.log(this.as.autoLogoutTimer);
-    console.log(new Date());
     if (this.as.isLoggedIn) {
       this.nome = this.as.nomeUtente;
     }
 
     this.ars.loadAllArticolo().subscribe(
       data => {
-        console.log(data);
         this.tutti = data;
         this.scegliCasuali();
       }, error => {
@@ -49,13 +44,11 @@ export class HomeComponent implements OnInit {
   scegliCasuali() {
     for (let i = 0; i < 10; i++) {
       let mom = Math.floor(Math.random() * (108 - 1 + 1))+1
-      console.log(mom)
       var controllo = true;
       this.nonadatti.forEach(elemNonAdatto => {
         if (mom == elemNonAdatto) {
           i--;
           controllo = false;
-          console.log("rimosso mom")
         }
       })
       if (controllo == true) {
@@ -73,7 +66,6 @@ export class HomeComponent implements OnInit {
     this.sceltiId.forEach(elem => {
       this.scelti.push(this.tutti[elem-1])
     })
-    console.log(this.scelti);
   }
 
   public dettaglio(id: number) {

@@ -22,7 +22,6 @@ export class DetailsComponent implements OnInit{
       let id:string=<string>param.get('id');
       this.ars.loadArticoloById(Number(id)).subscribe(data => {
         this.articolo=data;
-        console.log(this.articolo)
        })
     })
     if(this.loggato){

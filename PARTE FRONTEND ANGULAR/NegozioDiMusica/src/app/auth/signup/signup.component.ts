@@ -42,7 +42,7 @@ ngOnInit(): void {
         console.log(data);
         console.log("register eseguito correttamente")
       }, error=>{
-        console.log("errore nel register",error);
+        //console.log("errore nel register",error);
       })
       this.r.navigate(["/auth/login"])
     }

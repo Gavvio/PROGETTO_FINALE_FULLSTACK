@@ -2,6 +2,7 @@ package com.NegozioMusica.auth.runner;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -41,7 +42,12 @@ public class AuthRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
-		//setRoleDefault();
+		if(roleRepository.findById(1L).isEmpty()) {
+			System.out.println("nessun ruolo, creo i ruoli");
+			setRoleDefault();
+		};
+		System.out.println(roleRepository.findById(1L));
+		
 		//setUserDefault();
 		
 		//User mom=userRepository.findByEmail("domenico.frau@gmail.com");

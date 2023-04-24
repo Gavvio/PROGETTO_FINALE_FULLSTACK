@@ -9,34 +9,33 @@ import { User } from 'src/app/utils/interfacce';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit{
-  occhio:boolean=false;
-  inputType:string="password"
-  password!:HTMLInputElement;
-  constructor(private as:AuthService, private router:Router){
+export class LoginComponent implements OnInit {
+  occhio: boolean = false;
+  inputType: string = "password"
+  password!: HTMLInputElement;
+  constructor(private as: AuthService, private router: Router) {
   }
-ngOnInit(): void {
-this.password=<HTMLInputElement>document.querySelector("#passwordInput");
-}
+  ngOnInit(): void {
+    this.password = <HTMLInputElement>document.querySelector("#passwordInput");
+  }
 
   onSubmit(f: NgForm) {
 
-    this.as.signin(f.value).subscribe(data=>{
-      console.log("accesso eseguito",data);
-      const user={} as User;
-      user.name=data.name;
-      user.accessToken=data.accessToken;
-      let date=new Date();
-      date.setHours(date.getHours()+1);
-      localStorage.setItem('user',JSON.stringify(user));
-     localStorage.setItem('date',date.toString())
-      console.log(user);
-      this.as.token=data.accessToken;
-      this.as.isLoggedIn=true;
-      this.as.autoLogoutTimer=date;
+    this.as.signin(f.value).subscribe(data => {
+      console.log("accesso eseguito");
+      const user = {} as User;
+      user.name = data.name;
+      user.accessToken = data.accessToken;
+      let date = new Date();
+      date.setHours(date.getHours() + 1);
+      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('date', date.toString())
+      this.as.token = data.accessToken;
+      this.as.isLoggedIn = true;
+      this.as.autoLogoutTimer = date;
       this.tornaHome();
-    }, error=>{
-      console.log("errore nel login",error);
+    }, error => {
+      console.log("errore nel login", error);
     })
 
 
@@ -44,23 +43,23 @@ this.password=<HTMLInputElement>document.querySelector("#passwordInput");
 
 
 
-  tornaHome(){
-    this.router.navigate(["/"]).then(()=>{
+  tornaHome() {
+    this.router.navigate(["/"]).then(() => {
       window.location.reload();
     }
     )
   }
 
-  occhioCambia(){
+  occhioCambia() {
 
-    if(this.occhio){
-      this.occhio=false
+    if (this.occhio) {
+      this.occhio = false
       console.log(this.password)
-      this.password.type="password"
-    }else{
-      this.occhio=true
+      this.password.type = "password"
+    } else {
+      this.occhio = true
       console.log(this.password)
-      this.password.type="text"
+      this.password.type = "text"
     }
   }
 }

@@ -20,16 +20,6 @@ constructor(private http:HttpClient,private as: AuthService,private fs:Favourite
 }
 
 ngOnInit(): void {
-/*
- this.http.get<any>("http://localhost:8080/api/articolo/all").subscribe(data=>{
-      console.log(data);
-      this.preferiti=data;
-      console.log("preferiti:")
-      console.log(this.preferiti)
-    }, error=>{
-      console.log("errore nel login",error);
-    })
-    */
    this.getPreferiti();
 }
 

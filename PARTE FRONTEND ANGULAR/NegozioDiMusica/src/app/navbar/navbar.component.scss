@@ -55,23 +55,10 @@
 }
 
 .hover_viola:hover {
-  //background-color: #6009b0 !important;
-  //background-color: #9425fc;
-  //background:linear-gradient(225deg,#2c79c7,#62aefa);
-  //background:radial-gradient(#2c79c7,#62aefa);
-
   border: none;
   border-radius: 5px;
   cursor: pointer !important;
   background: linear-gradient(45deg, #73e3ff,#ec69fe );
-
-  // @media (prefers-color-scheme: light) {
-  //   background: linear-gradient(45deg, #73e3ff,#ec69fe );
-  // }
-
-  // @media (prefers-color-scheme: dark) {
-  //   background: linear-gradient(45deg, #dc0002,#050000 );
-  // }
 }
 
 
@@ -83,18 +70,8 @@
 #icona_user,
 #icona_preferiti,
 #icona_carrello {
-
-  //stroke:black
   padding: 5px;
   color: black;
-
-  // @media (prefers-color-scheme: light) {
-  //   color: black;
-  // }
-
-  // @media (prefers-color-scheme: dark) {
-  //  color: white;
-  // }
 }
 
 #logout {

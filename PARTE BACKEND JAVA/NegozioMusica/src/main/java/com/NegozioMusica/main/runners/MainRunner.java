@@ -13,6 +13,7 @@ import com.NegozioMusica.main.entities.ChitarraAcustica;
 import com.NegozioMusica.main.entities.ChitarraClassica;
 import com.NegozioMusica.main.entities.ChitarraElettrica;
 import com.NegozioMusica.main.entities.Corda;
+import com.NegozioMusica.main.repositories.ArticoloRepository;
 import com.NegozioMusica.main.repositories.CordaRepository;
 import com.NegozioMusica.main.services.AmplificatoreService;
 import com.NegozioMusica.main.services.ChitarraAcusticaService;
@@ -37,6 +38,8 @@ public class MainRunner implements ApplicationRunner {
 	CordaService cordaServ;
 	@Autowired 
 	AmplificatoreService ampServ;
+	@Autowired
+	ArticoloRepository artRepo;
 
 	void creaChitarraElettrica(String colore, String controlli, String corpo, String inlay, String larghezza,
 			String lunghezza, String manico, String pickup, int tasti, String tastiera, double prezzo, String modello,
@@ -111,13 +114,14 @@ public class MainRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("main runner on");
 		
-		//CREA ELETTRICHE
-		
-//      creaElettriche();
-//		creaClassiche();
-//		creaAcustiche();
-		creaCorde();
-
+		if(artRepo.findById(1L).isEmpty()) {
+			System.out.println("nessun articolo, creo gli articoli");
+	        creaElettriche();
+			creaClassiche();
+			creaAcustiche();
+			creaCorde();
+		};
+		System.out.println(artRepo.findById(1L));
 	}
 	
 	public void creaElettriche() {
@@ -148,23 +152,23 @@ public class MainRunner implements ApplicationRunner {
 	}
 	
 	public void creaCorde() {
-//		crea08();
-//		crea09();
-//		crea10();
-//		crea11();
-//		creaStandard();
-//		creaCarbonio();
-//		crea10Acustica();
-//		crea11Acustica();
-//		crea12();
-//		crea13();
-//		creaSteel();
-//		creaAcustici();
-//		crea40();
-//		crea45();
-//		crea50();
-//		crea40cinque();
-//		crea45cinque();
+		crea08();
+		crea09();
+		crea10();
+		crea11();
+		creaStandard();
+		creaCarbonio();
+		crea10Acustica();
+		crea11Acustica();
+		crea12();
+		crea13();
+		creaSteel();
+		creaAcustici();
+		crea40();
+		crea45();
+		crea50();
+		crea40cinque();
+		crea45cinque();
 	}
 
 	public void creaStratocasters(){

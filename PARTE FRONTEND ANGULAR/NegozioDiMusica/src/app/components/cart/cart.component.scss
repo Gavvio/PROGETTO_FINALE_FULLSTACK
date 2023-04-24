@@ -34,7 +34,6 @@ img{
 
   border-radius: 8px;
   padding: 9px;
-  //background-color: #ecacf5;
   background: linear-gradient(45deg, #73e3ff,#ec69fe );
   transition: transform 0.2s;
   &:hover{
@@ -46,7 +45,6 @@ img{
   height: 30px !important;
   border-radius: 25px  !important;
   padding: 10px  !important;
-  //background-color: #ecacf5  !important;
   background: linear-gradient(45deg, #73e3ff,#ec69fe );
   @media screen and (min-width:992px) {
     padding: 25px !important;

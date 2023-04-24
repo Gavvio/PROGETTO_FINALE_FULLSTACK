@@ -61,7 +61,6 @@ export class NavbarComponent implements OnInit {
     this.loggato = this.as.isLoggedIn;
     this.ars.loadAllArticolo().subscribe(
       data => {
-        console.log(data);
         this.tutti=data;
       }, error => {
         console.log("errore nel login", error);
@@ -71,7 +70,6 @@ export class NavbarComponent implements OnInit {
     this.closebutton=<HTMLButtonElement>document.querySelector("#closebutton");
     this.closebuttoncanvas=<HTMLButtonElement>document.querySelector("#chiudiOffCanvas")
     this.input=<HTMLInputElement>document.querySelector("#input_vero");
-    console.log(this.loggato)
   }
 
   public aggiornaCarrello(){
