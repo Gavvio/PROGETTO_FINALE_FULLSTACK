@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/negozio-di-musica",
     "ignore": [
       "firebase.json",
       "**/.*",

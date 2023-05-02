@@ -9,3 +9,17 @@ body {
   background: white !important;
   color: black !important;
 }
+
+/*firefox*/
+@media(prefers-color-scheme:dark){
+  :root{
+    color-scheme: light;
+  }
+}
+
+/*chrome*/
+@media(forced-colors:active){
+  :root{
+    color-scheme: light;
+  }
+}

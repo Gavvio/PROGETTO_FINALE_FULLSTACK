@@ -19,7 +19,7 @@ export class FavouritesService {
       'Authorization': `Bearer ${this.as.token}`
     })
 
-    return this.http.get<any>("http://localhost:8080/api/articolo/preferiti",{headers:headers});
+    return this.http.get<any>("https://gaviolimusic.osc-fr1.scalingo.io/api/articolo/preferiti",{headers:headers});
 
   }
 
@@ -30,7 +30,7 @@ export class FavouritesService {
       'Authorization': `Bearer ${this.as.token}`
     })
 
-    return this.http.post<any>(`http://localhost:8080/api/articolo/preferiti/${id}`,{},{headers:headers})
+    return this.http.post<any>(`https://gaviolimusic.osc-fr1.scalingo.io/api/articolo/preferiti/${id}`,{},{headers:headers})
 
   }
 
@@ -41,7 +41,7 @@ export class FavouritesService {
       'Authorization': `Bearer ${this.as.token}`
     })
 
-    return this.http.delete<any>(`http://localhost:8080/api/articolo/preferiti/${id}`,{headers:headers})
+    return this.http.delete<any>(`https://gaviolimusic.osc-fr1.scalingo.io/api/articolo/preferiti/${id}`,{headers:headers})
 
   }
 }

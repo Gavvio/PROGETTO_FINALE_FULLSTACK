@@ -29,8 +29,8 @@ export interface AuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  url = "http://localhost:8080/api/auth/"
-  //url="https://gaviolimusic.osc-fr1.scalingo.io/api/auth/"
+  //url = "http://localhost:8080/api/auth/"
+  url="https://gaviolimusic.osc-fr1.scalingo.io/api/auth/"
   autoLogoutTimer: Date=new Date();
   isLoggedIn:boolean=false;
   token="";

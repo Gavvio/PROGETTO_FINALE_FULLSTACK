@@ -8,7 +8,8 @@ import { AuthService } from 'src/app/auth/auth.service';
   providedIn: 'root'
 })
 export class CartService {
-  url:string="http://localhost:8080/api/articolo/"
+  //url:string="http://localhost:8080/api/articolo/"
+  url:string="https://gaviolimusic.osc-fr1.scalingo.io/api/articolo/"
   articoli:ArticoloPayload[]=[];
 
   constructor(private http:HttpClient,private as:AuthService) { }
