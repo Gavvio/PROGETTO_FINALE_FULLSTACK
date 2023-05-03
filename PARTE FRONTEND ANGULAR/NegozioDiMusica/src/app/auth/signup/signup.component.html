@@ -1,25 +1,47 @@
-<div class="mx-5 my-5 altezza">
+<div class="mx-5 mt-5 altezza">
   <div class="row d-flex justify-content-center">
 
-    <form
-      class="col-12 px-2 bordo py-2 bordo col-sm-8 col-md-6 col-lg-5 d-flex flex-column needs-validation justify-content-center"
-      #f="ngForm" (ngSubmit)=onSubmit(f)>
+    <form [formGroup]="requiredForm" novalidate
+      class="col-12 px-2 bordo py-2 bordo col-sm-8 col-md-6 col-lg-5 d-flex flex-column needs-validation justify-content-center">
 
       <h2 class="text-center">Register</h2>
 
       <div class="justify-content-center">
         <label for="inputName" class="form-label"></label>
-        <input type="text" class="form-control" placeholder="nome" name="name" ngModel>
+        <input type="text" spellcheck="false" class="form-control" placeholder="nome" id="name" formControlName="name">
+
+        <div
+          *ngIf="requiredForm.controls['name'].invalid && (requiredForm.controls['name'].dirty || requiredForm.controls['name'].touched)"
+          class="errore">
+          Inserisci un nome</div>
       </div>
 
       <div class="justify-content-center">
         <label for="inputSurname" class="form-label"></label>
-        <input type="text" class="form-control" placeholder="cognome" name="surname" ngModel>
+        <input type="text" spellcheck="false" class="form-control" placeholder="cognome" id="surname" formControlName="surname">
+
+        <div
+          *ngIf="requiredForm.controls['surname'].invalid && (requiredForm.controls['surname'].dirty || requiredForm.controls['surname'].touched)"
+          class="errore">
+          Inserisci un cognome</div>
       </div>
 
       <div class="justify-content-center">
         <label for="inputEmail4" class="form-label"></label>
-        <input type="email" class="form-control" placeholder="email" name="email" ngModel>
+        <input type="email" spellcheck="false" class="form-control" placeholder="email" formControlName="email">
+
+        <div
+          *ngIf="requiredForm.controls['email'].invalid && (requiredForm.controls['email'].dirty || requiredForm.controls['email'].touched)">
+
+          <div *ngIf="requiredForm.get('email')!.errors?.['required']" class="errore">
+            inserisci una mail
+          </div>
+
+          <div *ngIf="requiredForm.get('email')!.errors?.['email']" class="errore">
+            inserisci una mail valida
+          </div>
+
+        </div>
       </div>
 
       <div class="justify-content-center">
@@ -27,9 +49,8 @@
 
         <label for="inputPassword4" class="form-label"></label>
         <div class="d-flex flex-row align-items-center">
-          <input type="password" class="form-control" placeholder="password" id="passwordInputRegister" name="password"
-            ngModel>
-
+          <input type="password" class="form-control" placeholder="password" id="passwordInputRegister"
+            formControlName="password">
           <svg *ngIf="!occhio" (click)="occhioCambia()" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-eye  margineSinistro" viewBox="0 0 16 16">
             <path
@@ -46,11 +67,17 @@
               d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z" />
           </svg>
         </div>
+
+        <div
+          *ngIf="requiredForm.controls['password'].invalid && (requiredForm.controls['password'].dirty || requiredForm.controls['password'].touched)"
+          class="errore">
+          inserisci una password</div>
       </div>
 
       <div class="d-flex flex-column">
         <div class=" d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary bottone my-3" id="button_signup">Sign up</button>
+          <button type="submit" class="btn btn-primary bottone my-3" (click)="onSubmit()" id="button_signup"
+            [disabled]="requiredForm.pristine || requiredForm.invalid">Sign up</button>
         </div>
         <div class="d-flex justify-content-center flex-column text-center">
           Hai già un account?

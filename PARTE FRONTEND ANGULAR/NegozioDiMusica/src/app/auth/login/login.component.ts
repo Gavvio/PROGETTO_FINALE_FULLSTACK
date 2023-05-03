@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { NgModel,FormGroup, FormControl,Validators,FormBuilder} from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/utils/interfacce';
@@ -13,15 +14,24 @@ export class LoginComponent implements OnInit {
   occhio: boolean = false;
   inputType: string = "password"
   password!: HTMLInputElement;
-  constructor(private as: AuthService, private router: Router) {
+  requiredForm!:FormGroup;
+  constructor(private as: AuthService, private router: Router,private fb:FormBuilder) {
+  this.mioForm()
   }
   ngOnInit(): void {
     this.password = <HTMLInputElement>document.querySelector("#passwordInput");
   }
 
-  onSubmit(f: NgForm) {
+  mioForm(){
+    this.requiredForm=this.fb.group({
+      email:['',[Validators.required,Validators.email]],
+      password:['', Validators.required],
+    })
+  }
 
-    this.as.signin(f.value).subscribe(data => {
+  onSubmit() {
+
+    this.as.signin(this.requiredForm.value).subscribe(data => {
       console.log("accesso eseguito");
       const user = {} as User;
       user.name = data.name;
@@ -37,11 +47,7 @@ export class LoginComponent implements OnInit {
     }, error => {
       console.log("errore nel login", error);
     })
-
-
   }
-
-
 
   tornaHome() {
     this.router.navigate(["/"]).then(() => {
