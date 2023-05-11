@@ -162,7 +162,8 @@ const routes: Routes = [{ path: 'auth', loadChildren: () => import('./auth/auth.
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+// ,{useHash:true}
 export class AppRoutingModule { }
