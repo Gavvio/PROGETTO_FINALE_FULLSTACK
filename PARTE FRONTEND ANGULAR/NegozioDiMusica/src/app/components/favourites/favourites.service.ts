@@ -19,7 +19,7 @@ export class FavouritesService {
       'Authorization': `Bearer ${this.as.token}`
     })
 
-    return this.http.get<any>("https://gavioliapi.osc-fr1.scalingo.io/api/articolo/preferiti",{headers:headers});
+    return this.http.get<any>("https://gaviolapi.osc-fr1.scalingo.io/api/articolo/preferiti",{headers:headers});
 
   }
 
@@ -30,7 +30,7 @@ export class FavouritesService {
       'Authorization': `Bearer ${this.as.token}`
     })
 
-    return this.http.post<any>(`https://gavioliapi.osc-fr1.scalingo.io/api/articolo/preferiti/${id}`,{},{headers:headers})
+    return this.http.post<any>(`https://gaviolapi.osc-fr1.scalingo.io/api/articolo/preferiti/${id}`,{},{headers:headers})
 
   }
 
@@ -41,7 +41,7 @@ export class FavouritesService {
       'Authorization': `Bearer ${this.as.token}`
     })
 
-    return this.http.delete<any>(`https://gavioliapi.osc-fr1.scalingo.io/api/articolo/preferiti/${id}`,{headers:headers})
+    return this.http.delete<any>(`https://gaviolapi.osc-fr1.scalingo.io/api/articolo/preferiti/${id}`,{headers:headers})
 
   }
 }

@@ -9,7 +9,7 @@ import { ArticoloPayload, ChitarraClassica, ChitarraElettrica } from 'src/app/ut
 export class ArticlesService {
 
   //url:string="http://localhost:8080/api/articolo/"
-  url:string="https://gavioliapi.osc-fr1.scalingo.io/api/articolo/"
+  url:string="https://gaviolapi.osc-fr1.scalingo.io/api/articolo/"
   stratocasters:ChitarraElettrica[]=[];
 
   constructor(private http:HttpClient) { }
